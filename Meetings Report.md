@@ -11,14 +11,14 @@
 
 ### **Tasks**
 
-task | Status | Time
+Tasks | Status | Time
 --- | --- | ---
 Introduction | Done | 3 minutes
-Which way of Communication used | Done | 1 minute
-Meeting Times | Done | 5 minutes
-What tools is going to be used | Done | 15 minutes
-What type of project | Done | 10 minutes
-Which type of client and potential clients | Done | 15 minutes
+Deciding the way of Communication used | Done | 1 minute
+Deciding which tools is going to be used | Done | 15 minutes
+Deciding the meeting times | Done | 5 minutes
+Deciding the types of project | Done | 10 minutes
+Deciding the types of client & potential clients | Done | 15 minutes
 Allocation of tasks for next meeting | Done | 10 minutes
 
 ### **Decisions**
@@ -33,7 +33,7 @@ Allocation of tasks for next meeting | Done | 10 minutes
 
 ### **Events**
 
-- Created Meetings Report File
+- Created *Meetings Report* File
 - Found possible clients:
   - OPEQ
   - Damiano's Uncle Carwash
