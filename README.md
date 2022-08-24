@@ -6,7 +6,7 @@ It contains:
 
 - Project Files
 - Documentation
-- Meetings Report
+- [Meetings Report](Meetings_Report.md)
 
 ## [Project Instructions](SysDev_Project_Instructions.pdf)
 
@@ -22,8 +22,8 @@ Folder containing the files of each deliverable made for the project
 
 ## Authors
 
-- El Yamani, Yassine
-- Islam, Md Saqliyan
-- Lakhani, Uraib Ahmed
-- Nguyen-Chao, Andy-Tason
-- Visalli, Damiano
+- Andy-Tason Nguyen-Chao
+- Damiano Visalli
+- Md Saqliyan Islam
+- Uraib Ahmed Lakhani
+- Yassine El Yamani
