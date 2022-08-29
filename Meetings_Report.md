@@ -46,3 +46,32 @@ Allocation of tasks for next meeting | Done | 10 minutes
   - Read and understand the project's overview files
   - Make a Git repository
   - Set Up Discord Server
+
+# **Second Meeting**
+
+## Monday, 29th August, 2022 (14:55)
+
+### **Attendance**
+
+- Nguyen-Chao, Andy-Tason
+- Islam, Md Saqliyan
+- Visalli, Damiano
+- Lakhani, Uraib Ahmed
+- El Yamani, Yassine
+
+### **Tasks**
+
+Tasks | Status | Time
+--- | --- | ---
+Recap | Done | 5 minutes
+Email Reviewing | Done | 10 minutes
+
+### **Decisions**
+
+### **Events**
+
+### **Planning**
+
+- General:
+  - Find potential clients
+  - Get in touch with clients
