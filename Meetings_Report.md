@@ -49,7 +49,7 @@ Allocation of tasks for next meeting | Done | 10 minutes
 
 # **Second Meeting**
 
-## Monday, 29th August, 2022 (14:55)
+## Monday, 29th August, 2022 (14:55 - 15:15)
 
 ### **Attendance**
 
@@ -65,6 +65,7 @@ Tasks | Status | Time
 --- | --- | ---
 Recap | Done | 5 minutes
 Email Reviewing | Done | 10 minutes
+Next Meeting Scheduling | Done | 10 minutes
 
 ### **Decisions**
 
