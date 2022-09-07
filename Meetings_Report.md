@@ -17,9 +17,10 @@ Introduction | Done | 3 minutes
 Deciding the way of Communication used | Done | 1 minute
 Deciding which tools is going to be used | Done | 15 minutes
 Deciding the meeting times | Done | 5 minutes
-Deciding the types of project | Done | 10 minutes
+Deciding the types of project | Done | 5 minutes
 Deciding the types of client & potential clients | Done | 15 minutes
 Allocation of tasks for next meeting | Done | 10 minutes
+Next Meeting Scheduling | Done | 5 minutes
 
 ### **Decisions**
 
@@ -76,3 +77,32 @@ Next Meeting Scheduling | Done | 10 minutes
 - General:
   - Find potential clients
   - Get in touch with clients
+<<<<<<< Updated upstream
+=======
+
+# **Third Meeting**
+
+## Wednesday, 31st August, 2022 (8:55 - 9:55)
+
+### **Attendance**
+
+- Islam, Md Saqliyan
+- Visalli, Damiano
+- El Yamani, Yassine
+
+### **Tasks**
+
+Tasks | Status | Time
+---| --- | ---
+Recap | Done | 15 minutes
+Talk About Potential Clients | Done | 30 minutes
+Next Meeting Scheduling | Done | 15 Minutes
+
+ ### **Decisions**
+ 
+ ### **Events**
+ 
+ ### **Planning**
+ - General:
+   - Find potential clients
+>>>>>>> Stashed changes
