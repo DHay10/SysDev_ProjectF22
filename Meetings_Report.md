@@ -17,9 +17,10 @@ Introduction | Done | 3 minutes
 Deciding the way of Communication used | Done | 1 minute
 Deciding which tools is going to be used | Done | 15 minutes
 Deciding the meeting times | Done | 5 minutes
-Deciding the types of project | Done | 10 minutes
+Deciding the types of project | Done | 5 minutes
 Deciding the types of client & potential clients | Done | 15 minutes
 Allocation of tasks for next meeting | Done | 10 minutes
+Next Meeting Scheduling | Done | 5 minutes
 
 ### **Decisions**
 
@@ -79,7 +80,8 @@ Next Meeting Scheduling | Done | 10 minutes
 
 # **Third Meeting**
 
-## Wednesday, 31staugust, 2022 (8:55 - 9:55)
+## Wednesday, 31st August, 2022 (8:55 - 9:55)
+
 
 ### **Attendance**
 
@@ -101,5 +103,4 @@ Next Meeting Scheduling | Done | 15 Minutes
  
  ### **Planning**
  - General:
-   - Find potention clients
-   - 
+   - Find potential clients
