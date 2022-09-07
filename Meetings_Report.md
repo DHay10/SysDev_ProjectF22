@@ -79,11 +79,11 @@ Next Meeting Scheduling | Done | 10 minutes
 
 # **Third Meeting**
 
-## Wednesday, 31staugust, 2022 (8:55 - 10:15)
+## Wednesday, 31staugust, 2022 (8:55 - 9:55)
 
 ### **Attendance**
 
--- Islam, Md Saqliyan
+- Islam, Md Saqliyan
 - Visalli, Damiano
 - El Yamani, Yassine
 
