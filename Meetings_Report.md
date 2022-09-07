@@ -77,12 +77,11 @@ Next Meeting Scheduling | Done | 10 minutes
 - General:
   - Find potential clients
   - Get in touch with clients
-<<<<<<< Updated upstream
-=======
 
 # **Third Meeting**
 
 ## Wednesday, 31st August, 2022 (8:55 - 9:55)
+
 
 ### **Attendance**
 
@@ -105,4 +104,3 @@ Next Meeting Scheduling | Done | 15 Minutes
  ### **Planning**
  - General:
    - Find potential clients
->>>>>>> Stashed changes
