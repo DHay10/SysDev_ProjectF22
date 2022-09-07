@@ -76,3 +76,30 @@ Next Meeting Scheduling | Done | 10 minutes
 - General:
   - Find potential clients
   - Get in touch with clients
+
+# **Third Meeting**
+
+## Wednesday, 31staugust, 2022 (8:55 - 9:55)
+
+### **Attendance**
+
+- Islam, Md Saqliyan
+- Visalli, Damiano
+- El Yamani, Yassine
+
+### **Tasks**
+
+Tasks | Status | Time
+---| --- | ---
+Recap | Done | 15 minutes
+Talk About Potential Clients | Done | 30 minutes
+Next Meeting Scheduling | Done | 15 Minutes
+
+ ### **Decisions**
+ 
+ ### **Events**
+ 
+ ### **Planning**
+ - General:
+   - Find potention clients
+   - 
