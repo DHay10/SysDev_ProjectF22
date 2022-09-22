@@ -104,3 +104,53 @@ Next Meeting Scheduling | Done | 15 Minutes
  ### **Planning**
  - General:
    - Find potential clients
+
+# Tenth Meeting
+
+## Wednesday, 21st September, 2022 (20:00 - 21:00)
+
+### **Attendance**
+
+- Nguyen-Chao, Andy-Tason
+- Islam, Md Saqliyan
+- Visalli, Damiano
+- Lakhani, Uraib Ahmed
+
+### **Tasks**
+
+Tasks | Status | Time
+---| --- | ---
+Introduction of Deliverable 03 | Done | 15 minutes
+Division of Tasks | Done | 30 minutes
+Scheduling of Client Meeting | Done | 5 minutes
+Next Meeting Scheduling | Done | 5 Minutes
+Final Review of Logbook 02 | Done | 5 minutes
+
+### **Decisions**
+
+- Task Division for Deliverable 03
+  - Front Matter: Andy
+  - Executive Overview: Uraib & Andy
+  - Summary Description of the Client: Uraib
+  - Business Problem: Andy
+  - Narrative Description of the Present Information System: Andy & Uraib
+  - Appendix 1: Saqliyan
+  - Appendix 2: Damiano
+  - Appendix 3: Saqliyan & Damiano
+  - Appendix 4: Yassine
+  - Appendix 5: Yassine
+  - Editing & Formatting: Andy
+  - Final Review: Uraib & Andy
+- Tentative Client Meeting Scheduled on Saturday with Uraib & Saqliyan
+  - Subjects to Talk with the Client
+    - Questionnaire
+    - Current System In-Use
+    - Prototype Features & Uses
+
+### **Events**
+
+- No Events
+### **Planning**
+
+- Tentative Client Meeting Scheduled on Saturday, 24th September with Uraib & Saqliyan
+- Next Meeting Scheduled for Monday, 26th September (On Campus -- After Class)
