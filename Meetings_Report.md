@@ -97,11 +97,11 @@ Recap | Done | 15 minutes
 Talk About Potential Clients | Done | 30 minutes
 Next Meeting Scheduling | Done | 15 Minutes
 
- ### **Decisions**
+### **Decisions**
  
- ### **Events**
+### **Events**
  
- ### **Planning**
+### **Planning**
  - General:
    - Find potential clients
 
@@ -150,6 +150,7 @@ Final Review of Logbook 02 | Done | 5 minutes
 ### **Events**
 
 - No Events
+
 ### **Planning**
 
 - Tentative Client Meeting Scheduled on Saturday, 24th September with Uraib & Saqliyan
