@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-Home_Page">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Home_Page" data-name="Home Page" clip-path="url(#clip-Home_Page)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <g id="Component_5_1" data-name="Component 5 – 1">
+      <g id="Navbar">
+        <g id="Rectangle_1" data-name="Rectangle 1" fill="none" stroke="#b9b9b9" stroke-width="1">
+          <rect width="1920" height="128" stroke="none"/>
+          <rect x="0.5" y="0.5" width="1919" height="127" fill="none"/>
+        </g>
+      </g>
+      <g id="Home_Button" data-name="Home Button" transform="translate(831 -1)">
+        <g id="Active_Button" data-name="Active Button" transform="translate(25 25)">
+          <rect id="Rectangle_2" data-name="Rectangle 2" width="244" height="80" rx="40" fill="#fdb549"/>
+        </g>
+        <text id="Home" transform="translate(102 79)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Home</tspan></text>
+      </g>
+      <g id="Book_Button" data-name="Book Button" transform="translate(783)">
+        <g id="Inactive_Button" data-name="Inactive Button" transform="translate(339 25)">
+          <rect id="Rectangle_3" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="Book" transform="translate(422 78.5)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Book</tspan></text>
+      </g>
+      <g id="More_Button" data-name="More Button" transform="translate(719 1)">
+        <g id="Inactive_Button-2" data-name="Inactive Button" transform="translate(669 24)">
+          <rect id="Rectangle_3-2" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="More" transform="translate(751 78)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">More</tspan></text>
+      </g>
+      <g id="Sign_In_Button" data-name="Sign In Button" transform="translate(658)">
+        <g id="Inactive_Button-3" data-name="Inactive Button" transform="translate(996 25)">
+          <rect id="Rectangle_3-3" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="Sign_In" data-name="Sign In" transform="translate(1066 79)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Sign In</tspan></text>
+      </g>
+      <text id="ZAWSS" transform="translate(29 85)" fill="#fdb549" font-size="50" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">ZAWSS</tspan></text>
+    </g>
+    <text id="Welcome" transform="translate(851 248)" fill="#fdb549" font-size="50" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Welcome</tspan></text>
+    <g id="Rectangle_4" data-name="Rectangle 4" transform="translate(490 295)" fill="none" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+      <rect width="941" height="719" rx="130" stroke="none"/>
+      <rect x="0.5" y="0.5" width="940" height="718" rx="129.5" fill="none"/>
+    </g>
+    <text id="Lorem_Ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry._Lorem_Ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s_when_an_unknown_printer_took_a_galley_of_type_and_scrambled_it_to_make_a_type_specimen_book._It_ha" data-name="Lorem Ipsum is simply dummy text of the printing 
+and typesetting industry. Lorem Ipsum has been the
+ industry&apos;s standard dummy text ever since the 1500s, 
+when an unknown printer took a galley of type and 
+scrambled it to make a type specimen book. 
+It ha" transform="translate(960 432)" fill="#fdb549" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-383.094" y="0">Lorem Ipsum is simply dummy text of the printing </tspan><tspan x="-391.594" y="43">and typesetting industry. Lorem Ipsum has been the</tspan><tspan x="-409.844" y="86" xml:space="preserve"> industry&apos;s standard dummy text ever since the 1500s, </tspan><tspan x="-390.563" y="129">when an unknown printer took a galley of type and </tspan><tspan x="-336.32" y="172">scrambled it to make a type specimen book. </tspan><tspan x="-355.219" y="215">It has survived not only five centuries, but also </tspan><tspan x="-353.281" y="258">the leap into electronic typesetting, remaining </tspan><tspan x="-364.305" y="301">essentially unchanged. It was popularised in the </tspan><tspan x="-392.531" y="344">1960s with the release of Letraset sheets containing </tspan><tspan x="-421.695" y="387">Lorem Ipsum passages, and more recently with desktop </tspan><tspan x="-394.805" y="430">publishing software like Aldus PageMaker including </tspan><tspan x="-188.914" y="473">versions of Lorem Ipsum.</tspan></text>
+  </g>
+</svg>

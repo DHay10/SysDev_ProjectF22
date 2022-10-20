@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-Register">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Register" clip-path="url(#clip-Register)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <g id="Component_5_3" data-name="Component 5 – 3">
+      <g id="Navbar">
+        <g id="Rectangle_1" data-name="Rectangle 1" fill="none" stroke="#b9b9b9" stroke-width="1">
+          <rect width="1920" height="128" stroke="none"/>
+          <rect x="0.5" y="0.5" width="1919" height="127" fill="none"/>
+        </g>
+      </g>
+      <g id="Home_Button" data-name="Home Button" transform="translate(831 -1)">
+        <g id="Active_Button" data-name="Active Button" transform="translate(25 25)">
+          <rect id="Rectangle_2" data-name="Rectangle 2" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="Home" transform="translate(102 79)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Home</tspan></text>
+      </g>
+      <g id="Book_Button" data-name="Book Button" transform="translate(783)">
+        <g id="Inactive_Button" data-name="Inactive Button" transform="translate(339 25)">
+          <rect id="Rectangle_3" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="Book" transform="translate(422 78.5)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Book</tspan></text>
+      </g>
+      <g id="More_Button" data-name="More Button" transform="translate(719 1)">
+        <g id="Inactive_Button-2" data-name="Inactive Button" transform="translate(669 24)">
+          <rect id="Rectangle_3-2" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#ffd08a"/>
+        </g>
+        <text id="More" transform="translate(751 78)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">More</tspan></text>
+      </g>
+      <g id="Sign_In_Button" data-name="Sign In Button" transform="translate(658)">
+        <g id="Inactive_Button-3" data-name="Inactive Button" transform="translate(996 25)">
+          <rect id="Rectangle_3-3" data-name="Rectangle 3" width="244" height="80" rx="40" fill="#fdb549"/>
+        </g>
+        <text id="Sign_In" data-name="Sign In" transform="translate(1066 79)" fill="#fff" font-size="32" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Sign In</tspan></text>
+      </g>
+      <text id="ZAWSS" transform="translate(29 85)" fill="#fdb549" font-size="50" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">ZAWSS</tspan></text>
+    </g>
+  </g>
+</svg>
