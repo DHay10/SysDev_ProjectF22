@@ -6,7 +6,9 @@ class Model{
 
 	public function __construct() {
 		$server = 'localhost';
+
 		$dbname = '';
+
 		$username = 'root';
 		$password = '';
 

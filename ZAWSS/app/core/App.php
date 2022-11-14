@@ -2,6 +2,7 @@
 namespace app\core;
 
 class App{
+
 	private $controller = 'Main';
 	private $method = 'index';
 
