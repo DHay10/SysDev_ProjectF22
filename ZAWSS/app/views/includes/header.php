@@ -1,11 +1,11 @@
 <ul class="navbar">
     <h1>ZAWSS</h1>
     <li><a href=''>Home</a></li>
-    <li><a href=''>Book</a></li>
+    <li><a href='/User/book'>Book</a></li>
     <button class="dropbtn">More</button>
     <div class="dropdown-content">
         <li><a href=''>About Us</a></li>
-        <li><a href=''>FAQ</a></li>
+        <li><a href='/Main/faq'>FAQ</a></li>
         <li><a href=''>Contact Us</a></li>
     </div>
     <?php if(isset($_SESSION['user_id'])) { ?>

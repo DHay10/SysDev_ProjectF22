@@ -4,4 +4,8 @@
         public function index(){
             $this->view('Main/index');
         }
+
+        public function faq() {
+            $this->view('Main/faq');
+        }
     }
