@@ -7,7 +7,7 @@ class Model{
 	public function __construct() {
 		$server = 'localhost';
 
-		$dbname = '';
+		$dbname = 'sysdev_project';
 
 		$username = 'root';
 		$password = '';
