@@ -2,7 +2,7 @@
     namespace app\controllers;
     class User extends \app\core\Controller {
         
-        public function login(){
+        public function login() {
             if(isset($_POST['action'])){
                 $user = new \app\models\User();
                 $user = $user->getUser($_POST['username']);
@@ -18,7 +18,7 @@
             }
         }
 
-        public function register(){
+        public function register() {
             if(isset($_POST['action'])){
                 if($_POST['password'] == $_POST['password_conf']){
                     $user = new \app\models\User();
@@ -43,10 +43,11 @@
             }
         }
         public function logout() {
-
+            session_destroy();
+		    header('location:/User/login');
         }
 
-        public function booking(){
+        public function book() {
             if(isset($_POST['action'])){
                 
             } else {
