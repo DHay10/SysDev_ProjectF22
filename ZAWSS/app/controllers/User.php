@@ -13,6 +13,8 @@
                 }else{
                     header('location:/User/login?error=Invalid credentials');
                 }
+            } else {
+                $this->view('User/login');
             }
         }
 
