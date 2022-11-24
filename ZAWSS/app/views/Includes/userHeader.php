@@ -14,7 +14,7 @@
                 <a class="nav-link active" aria-current="page" href="/Main/index">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/User/book">Book</a>
+                <a class="nav-link" href="/User/booking">Book</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -15,11 +15,11 @@
         
         <div class='container mb-4'>
             <h2 class="h1-responsive font-weight-bold text-center my-4">Register</h2>
-            <form id="register-form" name="register-form" action="">
+            <form action="" method="post">
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="username" placeholder="" required>
+                            <input type="text" class="form-control" name="username" placeholder="" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -28,15 +28,15 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="firstName" placeholder="" required>
-                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" name="fName" placeholder="" required>
+                            <label for="fname">First Name</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="lastName" placeholder="" required>
-                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" name="lName" placeholder="" required>
+                            <label for="lname">Last Name</label>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="phone" placeholder="" required>
+                            <input type="tel" class="form-control" name="phone" placeholder="" required>
                             <label for="phone">Phone</label>
                             <div id="phoneHelp" class="form-text">I.e. (XXX)XXX-XXXX</div>
                         </div>
@@ -52,7 +52,7 @@
                     
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="" required>
+                            <input type="email" class="form-control" name="email" placeholder="" required>
                             <label for="email">Email</label>
                             <div id="emailHelp" class="form-text">example@example.com</div>
                         </div>
@@ -62,15 +62,15 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="" minlength="8" required>
-                            <label for="phone">Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="" minlength="8" required>
+                            <label for="password">Password</label>
                             <div id="passwordHelp" class="form-text">At least 8 characters</div>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="passwordConf" placeholder="" required>
+                            <input type="password" class="form-control" name="password_conf" placeholder="" required>
                             <label for="passwordConf">Password Confirmation</label>
                             <div id="passwordConfHelp" class="form-text">Re-enter your Password</div>
                         </div>
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="text-center text-md-right">
-                    <button type="submit" class="btn btn-dark w-50">Sign In</button>
+                    <button name="action" type="submit" class="btn btn-dark w-50">Sign In</button>
                 </div>
 
                 <div class="text-center text-md-right">

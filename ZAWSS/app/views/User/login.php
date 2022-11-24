@@ -16,11 +16,11 @@
         <div class='container mb-4'>
             <h2 class="h1-responsive font-weight-bold text-center my-4">Log In</h2>
             
-            <form id="userLogin-form" name="userLogin-form" action="">
+            <form id="userLogin-form" name="userLogin-form" action="" method="post">
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="username" placeholder="" required>
+                            <input type="text" class="form-control" name="username" placeholder="" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -29,14 +29,14 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="" required>
+                            <input type="password" class="form-control" name="password" placeholder="" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
                 </div>
                     
                 <div class="text-center text-md-right">
-                    <button type="submit" class="btn btn-dark w-50">Sign In</button>
+                    <button name="action" type="submit" class="btn btn-dark w-50">Sign In</button>
                 </div>
 
                 <div class="text-center text-md-right">
