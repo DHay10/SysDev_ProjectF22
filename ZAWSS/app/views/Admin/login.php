@@ -1,86 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Sign in</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</head>
-<body>
+<html lang="en">
+	<head>
+		<title>Admin Log In</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<?php include 'app\views\includes\adminHeader.php';?>
 
-	<div class="container">
-		<form action="" method="post">
-			
-			<label>Username</label>
-			<input type="text" name="username" required>
-			<label>Password</label>
-			<input type="password" name="password" required>
-			<input id="login" type="submit" name="action" value="Login">
+		<div class='container mb-4'>
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Admin Log In</h2>
+            
+			<form id="userLogin-form" name="userLogin-form" action="">
+				<div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" placeholder="" required>
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                </div>
 
-			<label class="notReg">Not registerd yet?</label>
-			<a class="register" href="#">Register</a>
-		</form>
-	</div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="text-center text-md-right">
+                    <button type="submit" class="btn btn-dark w-50">Sign In</button>
+                </div>
+            </form>
 
-<!-- <style type="text/css">
-	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-	
-	body{
-		font-family: 'Poppins', sans-serif;
-		margin: 0;
-		padding: 0;
-	}
-	form{
-		position: absolute;
-		width: 90%;
-	}
-	.container{
-		display: flex;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		width: 30%;
-		height: 70vh;
-		justify-content: center;
-	}
-	#login{
-		margin-bottom:20px ;
-		width: 30%;
-		padding: 10px 10%;
-		margin: 35px auto 30px auto;
-		background-color: #fdb549;
-		border: none;
-		color: white;
-	}
-	.container input{
-		display: flex;
-		outline: none;
-		width: 100%;
-		padding: 10px 10px;
-		border: solid darkgray 1px;
-		border-radius: 20px;
-	}
-	.notReg{
-		display: flex;
-	}
-	.register{
-		position: absolute;
-		text-align: center;
-		background-color: #fdb549;
-		width: 30%;
-		line-height: 36px;
-		border: none;
-		color: white;
-		border-radius: 20px;
-		text-decoration: none;
-	}
-	label{
-		color:#fdb549;
-	}
-
-
-
-</style> -->
-
-</body>
+			<div class="text-center text-md-right p-5">
+				<a class="btn btn-dark" href="/User/login" role="button">User Login</a>
+			</div>
+        </div>
+	</body>
 </html>
