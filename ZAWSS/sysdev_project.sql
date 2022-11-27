@@ -78,10 +78,17 @@ CREATE TABLE `client` (
 CREATE TABLE `destination` (
   `destination_id` int(5) NOT NULL,
   `country` varchar(60) NOT NULL,
-  `city` int(60) NOT NULL
+  `city` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+
+INSERT INTO `destination` (`destination_id`, `country`,`city` ) VALUES
+(1, 'Canada', 'Montreal'),
+(2, 'Pakistan', 'Karachi'),
+(3, 'United States', 'New York');
+
+
 
 --
 -- Table structure for table `message`
@@ -111,6 +118,13 @@ CREATE TABLE `type` (
 --
 -- Indexes for dumped tables
 --
+
+INSERT INTO `type` (`type_id`, `name` ) VALUES
+(1, 'Single'),
+(2, 'Student'),
+(3, 'Elder');
+
+
 
 --
 -- Indexes for table `admin`

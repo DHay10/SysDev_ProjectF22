@@ -31,7 +31,7 @@
                     </ul>
                 </li>
 
-                <?php if(isset($_SESSION['user_id'])) { ?>
+                <?php if(isset($_SESSION['username'])) { ?>
                     
                 <li class="nav-item">
                     <a class="nav-link" href="/User/profile">Profile</a>

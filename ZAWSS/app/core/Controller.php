@@ -3,7 +3,7 @@ namespace app\core;
 
 class Controller{
 
-	public function view($name, $data = []){
+	public function view($name, $data = [], $data2 = [] ){
 		include('app/views/' . $name . '.php');
 	}
 
