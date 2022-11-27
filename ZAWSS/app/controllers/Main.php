@@ -15,6 +15,24 @@
         }
 
         public function contactUs() {
+
+            $message = new \app\models\Message();
+
+            
+
+            if (isset($_POST['action'])) {
+                
+                $message->fName = $_POST['fName'];
+                $message->lName = $_POST['lName'];
+                $message->email = $_POST['email'];
+                $message->phone = $_POST['phone'];
+                $message->content = $_POST['content'];
+    
+               $message->insertMessage();
+
+
+            }
+            
             $this->view('Main/contactUs');
         }
 

@@ -30,7 +30,7 @@
 
                 <!--Grid column-->
                 <div class="col-md-9 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <form id="contact-form" name="contact-form" action="" method="post">
 
                         <!--Grid row-->
                         <div class="row">
@@ -38,11 +38,22 @@
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <label for="name" class="">Your name</label>
-                                    <input type="text" id="name" name="name" class="form-control">
+                                    <label for="fName" class="">First name</label>
+                                    <input type="text" id="fName" name="fName" class="form-control">
                                 </div>
                             </div>
                             <!--Grid column-->
+
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="lName" class="">Last name</label>
+                                    <input type="text" id="lName" name="lName" class="form-control">
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
 
                             <!--Grid column-->
                             <div class="col-md-6">
@@ -52,6 +63,20 @@
                                 </div>
                             </div>
                             <!--Grid column-->
+
+
+
+                              <!--Grid column-->
+                              <div class="col-md-6">
+                                <div class="md-form mb-0">                                    
+                                    <label for="phone" class="">Your phone</label>
+                                    <input type="phone" id="phone" name="phone" class="form-control">
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+
+
 
                         </div>
                         <!--Grid row-->
@@ -75,7 +100,7 @@
 
                                 <div class="md-form">
                                     <label for="message">Your message</label>
-                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    <textarea type="text" id="message" name="content" rows="2" class="form-control md-textarea"></textarea>
                                     
                                 </div>
 
@@ -83,10 +108,13 @@
                         </div>
                         <!--Grid row-->
 
-                    </form>
+                    
 
                     <div class="text-center text-md-right">
-                        <a class="btn btn-warning w-50" onclick="alert('message sent!')">Send</a>
+                    <button name="action" type="submit" class="btn btn-primary">Send</button>
+
+                    </form>
+                    
                     </div>
                     <div class="status"></div>
                 </div>
