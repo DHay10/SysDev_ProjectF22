@@ -10,8 +10,13 @@ class User extends \app\core\Controller
         if (isset($_POST['action'])) {
             $user = new \app\models\User();
             $user = $user->getUser($_POST['username']);
+
             if (password_verify($_POST['password'], $user->password_hash)) {
-                session_start();
+                $_SESSION['client_id'] = $user->client_id;
+                $_SESSION['fName'] = $user->fName;
+                $_SESSION['lName'] = $user->lName;
+                $_SESSION['email'] = $user->email;
+                $_SESSION['phone'] = $user->phone;
                 $_SESSION['username'] = $user->username;
                 header('location:/User/booking'); //temp relocation, cuzz home not done yet!
             } else {

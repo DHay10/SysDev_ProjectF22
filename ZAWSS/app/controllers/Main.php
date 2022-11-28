@@ -17,11 +17,15 @@
         public function contactUs() {
 
             $message = new \app\models\Message();
+            $user = new \app\models\User();
 
-            
+            // $user = $user->getByID($_SESSION['client_id']);
+
+            // echo $user;
+            // var_dump($_SESSION['client_id']);
 
             if (isset($_POST['action'])) {
-                
+                // var_dump($user);
                 $message->fName = $_POST['fName'];
                 $message->lName = $_POST['lName'];
                 $message->email = $_POST['email'];
@@ -33,7 +37,7 @@
 
             }
             
-            $this->view('Main/contactUs');
+             $this->view('Main/contactUs', $user);
         }
 
     }

@@ -34,12 +34,16 @@
 
                         <!--Grid row-->
                         <div class="row">
-
+                            
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <label for="fName" class="">First name</label>
-                                    <input type="text" id="fName" name="fName" class="form-control">
+                                    <?php if(isset($_SESSION['client_id'])) { ?>
+                                        <input type='text' id='fName' name='fName' class='form-control' value='<?= $_SESSION['fName']?>' readonly disabled>
+                                    <?php } else { ?>
+                                        <input type='text' id='fName' name='fName' class='form-control'>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -49,7 +53,11 @@
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <label for="lName" class="">Last name</label>
-                                    <input type="text" id="lName" name="lName" class="form-control">
+                                    <?php if(isset($_SESSION['client_id'])) { ?>
+                                    <input type="text" id="lName" name="lName" class="form-control" value="<?= $_SESSION['lName']?>" readonly disabled>
+                                    <?php } else { ?>
+                                        <input type='text' id='lName' name='lName' class='form-control'>
+                                        <?php } ?>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -59,7 +67,11 @@
                             <div class="col-md-6">
                                 <div class="md-form mb-0">                                    
                                     <label for="email" class="">Your email</label>
-                                    <input type="text" id="email" name="email" class="form-control">
+                                    <?php if(isset($_SESSION['client_id'])) { ?>
+                                    <input type="text" id="email" name="email" class="form-control" value="<?= $_SESSION['email']?>" readonly disabled>
+                                    <?php } else { ?>
+                                        <input type='text' id='email' name='email' class='form-control'>
+                                        <?php } ?>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -70,7 +82,11 @@
                               <div class="col-md-6">
                                 <div class="md-form mb-0">                                    
                                     <label for="phone" class="">Your phone</label>
-                                    <input type="phone" id="phone" name="phone" class="form-control">
+                                    <?php if(isset($_SESSION['client_id'])) { ?>
+                                    <input type="phone" id="phone" name="phone" class="form-control" value="<?= $_SESSION['phone']?>" readonly disabled>
+                                    <?php } else { ?>
+                                         <input type='text' id='phone' name='phone' class='form-control'>
+                                         <?php } ?>
                                 </div>
                             </div>
                             <!--Grid column-->
