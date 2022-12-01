@@ -69,6 +69,14 @@ namespace app\models;
 		return $STMT->fetch();
 	}
 
+    public function getAll(){
+        $SQL = "SELECT * FROM booking_info";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute();
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+        return $STMT->fetchAll();
+    }
+
 
 
    

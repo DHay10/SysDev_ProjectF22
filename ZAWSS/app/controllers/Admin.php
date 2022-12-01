@@ -2,6 +2,16 @@
 namespace app\controllers;
 
 class Admin extends \app\core\Controller{
+
+	public function index(){
+		$booking = new \app\models\Booking();
+		$bookings = $booking->getAll();
+		$type = new \app\models\Booking();
+		$types = $type->getAllTypes();
+		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types]);
+
+	}
+
 	public function login(){
 		if(isset($_POST['action'])){
 			$admin = new \app\models\Admin();
@@ -9,7 +19,7 @@ class Admin extends \app\core\Controller{
 			if(password_verify($_POST['password'], $admin->password_hash)){
 				$_SESSION['admin_id'] = $admin->admin_id;
 				$_SESSION['username'] = $admin->username;
-				// header('location:/Admin/');
+				header('location:/Admin/index');	
 			}else{
 				header('location:/Admin/login?error=Invalid credentials');
 			}
