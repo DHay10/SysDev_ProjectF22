@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+<nav class="navbar sticky-top navbar-dark navbar-expand-lg bg-dark">
     <!-- Container -->
     <div class="container-fluid">
         <!-- Brand -->

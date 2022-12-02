@@ -55,6 +55,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row mb-4">
                     <div class="col-md-12">
                         <div class="form-floating mb-0">
@@ -81,23 +82,8 @@
 
             </form>
 
-            <ul class="list-unstyled mb-0">
-                <hr>
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>821 Sainte Croix Ave, Saint-Laurent, Quebec H4L 3X9</p>
-                </li>
-                <hr>
-                
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>(514) 744-7500</p>
-                </li>
-                <hr>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>zawss@fakeemail.com</p>
-                </li>
-                <hr>
-            </ul>
         </div>
+
+        <?php include 'app\views\includes\userFooter.php'; ?>
     </body>
 </html>
