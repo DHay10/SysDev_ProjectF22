@@ -18,10 +18,11 @@ class User extends \app\core\Controller
                 $_SESSION['email'] = $user->email;
                 $_SESSION['phone'] = $user->phone;
                 $_SESSION['username'] = $user->username;
-                header('location:/User/booking'); //temp relocation, cuzz home not done yet!
+                header('location:/Main/index');
             } else {
                 header('location:/User/login?error=Invalid credentials');
             }
+
         } else {
             $this->view('User/login');
         }
@@ -54,6 +55,21 @@ class User extends \app\core\Controller
             }
         } else {
             $this->view('User/register');
+        }
+    }
+
+    public function profile() {
+        $user = new \app\models\User();
+		$user = $user->getByID($_SESSION['client_id']);
+        if (isset($_POST['action'])) {
+            $user->email = $_POST['email'];
+			$user->phone = $_POST['phone'];
+			$user->updateProfile();
+			$_SESSION['email'] = $user->email;
+			$_SESSION['phone'] = $user->phone;
+			header('location:/User/profile?message=Profile has been Updated!');
+        } else {
+            $this->view('User/profile');
         }
     }
 

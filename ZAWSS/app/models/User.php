@@ -38,4 +38,13 @@ class User extends \app\core\Model{
         return $STMT->fetchAll();
     }
 
+	public function updateProfile() {
+		$SQL = "UPDATE client SET email=:email, phone=:phone WHERE client_id=:client_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['email'=>$this->email,
+						'phone'=>$this->phone,
+						'client_id'=>$this->client_id]);
+
+	}
+
 }
