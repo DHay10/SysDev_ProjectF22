@@ -1,7 +1,7 @@
 <?php 
 namespace app\models;
 
-class User extends \app\core\Model{
+class User extends \app\core\Model {
 
 	public function getUser($username){
 		$SQL = "SELECT * FROM client WHERE username=:username";

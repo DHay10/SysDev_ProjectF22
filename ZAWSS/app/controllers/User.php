@@ -2,11 +2,9 @@
 
 namespace app\controllers;
 
-class User extends \app\core\Controller
-{
+class User extends \app\core\Controller {
 
-    public function login()
-    {
+    public function login() {
         if (isset($_POST['action'])) {
             $user = new \app\models\User();
             $user = $user->getUser($_POST['username']);
@@ -28,14 +26,12 @@ class User extends \app\core\Controller
         }
     }
 
-    public function logout()
-    {
+    public function logout() {
         session_destroy();
         header('location:/User/login');
     }
 
-    public function register()
-    {
+    public function register() {
         if (isset($_POST['action'])) {
             if ($_POST['password'] == $_POST['passwordConf']) {
                 $user = new \app\models\User();
@@ -73,8 +69,7 @@ class User extends \app\core\Controller
         }
     }
 
-    public function booking()
-    {
+    public function booking() {
 
         $booking = new \app\models\Booking();
         //Gets all the destinations country&city and pass them to the view

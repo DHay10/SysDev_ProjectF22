@@ -6,15 +6,12 @@ class Model{
 
 	public function __construct() {
 		$server = 'localhost';
-
 		$dbname = 'sysdev_project';
-
 		$username = 'root';
 		$password = '';
 
 		try{
-			self::$_connection = new \PDO("mysql:host=$server;dbname=$dbname",
-											$username,$password);
+			self::$_connection = new \PDO("mysql:host=$server;dbname=$dbname",$username,$password);
 			self::$_connection->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
 		}catch(\Exception $e){
 			echo "Failed connecting to the database";

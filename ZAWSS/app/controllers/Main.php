@@ -15,29 +15,18 @@
         }
 
         public function contactUs() {
-
-            $message = new \app\models\Message();
-            $user = new \app\models\User();
-
-            // $user = $user->getByID($_SESSION['client_id']);
-
-            // echo $user;
-            // var_dump($_SESSION['client_id']);
-
             if (isset($_POST['action'])) {
-                // var_dump($user);
+                $message = new \app\models\Message();
                 $message->fName = $_POST['fName'];
                 $message->lName = $_POST['lName'];
                 $message->email = $_POST['email'];
                 $message->phone = $_POST['phone'];
+                $message->subject = $_POST['subject'];
                 $message->content = $_POST['content'];
-    
-               $message->insertMessage();
-
-
+                $message->insertMessage();
+            header('location:/Main/contactUs?message=Message has been sent!.');
+            } else {
+                $this->view('Main/contactUs');
             }
-            
-             $this->view('Main/contactUs', $user);
         }
-
     }

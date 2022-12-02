@@ -1,13 +1,12 @@
 <?php
 namespace app\core;
 
-class App{
+class App {
 
 	private $controller = 'Main';
 	private $method = 'index';
 
 	public function __construct(){
-
 		$url = self::parseUrl();
 
 		if(isset($url[0])){
@@ -35,21 +34,22 @@ class App{
 
 		foreach ($attributes as $attribute) {
 			$filter = $attribute->newInstance();
-			if($filter->execute())
+			if($filter->execute()){
 				return;
+			}
 		}
 
 		$params = $url ? array_values($url) : [];
-		call_user_func_array([ $this->controller, $this->method ], $params);
+		call_user_func_array([$this->controller, $this->method], $params);
+
 	}
 
 	public static function parseUrl(){
-		if(isset($_GET['url']))
-		{
-			return explode('/',
+		if(isset($_GET['url'])) {
+			return explode('/', 
 				filter_var(
-					rtrim($_GET['url'], '/'))
-				,FILTER_SANITIZE_URL);
+					rtrim($_GET['url'], '/')), 
+				FILTER_SANITIZE_URL);
 		}
 	}
 }
