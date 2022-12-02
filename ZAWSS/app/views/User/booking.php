@@ -107,5 +107,7 @@
             </form>
         </div>
 
+        <?php include 'app\views\includes\userFooter.php'; ?>
+
     </body>
 </html>

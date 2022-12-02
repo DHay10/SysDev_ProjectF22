@@ -96,5 +96,7 @@
             </section>
             <!--Section: FAQ-->
         </div>
+
+        <?php include 'app\views\includes\userFooter.php'; ?>
     </body>
 </html>

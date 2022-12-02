@@ -49,5 +49,7 @@
                 <a class="btn btn-dark" href="/Admin/login" role="button">Admin Login</a>
             </div>
         </div>
+
+        <?php include 'app\views\includes\userFooter.php'; ?>
     </body>
 </html>

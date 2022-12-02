@@ -24,7 +24,7 @@
                 $message->subject = $_POST['subject'];
                 $message->content = $_POST['content'];
                 $message->insertMessage();
-            header('location:/Main/contactUs?message=Message has been sent!');
+                header('location:/Main/contactUs?message=Message has been sent!');
             } else {
                 $this->view('Main/contactUs');
             }

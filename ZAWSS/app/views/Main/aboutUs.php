@@ -17,5 +17,7 @@
         <?php include 'app\views\includes\userHeader.php'; ?>
         <h1>About Us Page</h1>
 
+
+        <?php include 'app\views\includes\userFooter.php'; ?>
     </body>
 </html>

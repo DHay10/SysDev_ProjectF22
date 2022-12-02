@@ -19,7 +19,9 @@
         <div id="slider">
         </div>
         </center>
-</body>
+
+        <?php include 'app\views\includes\userFooter.php'; ?>
+  </body>
 <style type="text/css">
   #slider{
     width: 100%;

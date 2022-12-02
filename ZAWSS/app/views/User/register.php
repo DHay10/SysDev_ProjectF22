@@ -88,7 +88,10 @@
             </form>
         </div>
 
-        <script>
+        <?php include 'app\views\includes\userFooter.php'; ?>
+    </body>
+    
+    <script>
         function validate() {
             password = document.getElementById('password').value;
             passwordConf = document.getElementById('passwordConf').value;
@@ -97,7 +100,5 @@
                 event.preventDefault();
             }
         }
-        </script>
-
-    </body>
+    </script>
 </html>
