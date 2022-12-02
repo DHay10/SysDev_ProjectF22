@@ -5,10 +5,13 @@ class Admin extends \app\core\Controller{
 
 	public function index(){
 		$booking = new \app\models\Booking();
+		$cleint = new \app\models\User();
 		$bookings = $booking->getAll();
+		$clients = $cleint->getAll();
 		$type = new \app\models\Booking();
 		$types = $type->getAllTypes();
-		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types]);
+		$destinations = $booking->getAllDestinations();
+		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
 
 	}
 

@@ -25,4 +25,12 @@ class User extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getAll(){
+        $SQL = "SELECT * FROM client";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute();
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+        return $STMT->fetchAll();
+    }
+
 }

@@ -15,79 +15,72 @@
             <h2 class="h1-responsive font-weight-bold text-center my-4">Client Bookings</h2>
             
             <div class="row mb-4">
-                <?php
-                    
-                    foreach ($data['bookings'] as $item) {
-                        echo "
-
+                
                         <table class='table'>
 						  <thead>
 						    <tr>
 						      <th scope='col'>Booking Id</th>
-						      <th scope='col'>Client Id</th>
-						      <th scope='col'>Destination Id</th>
 						      <th scope='col'>Flight date</th>
 						      <th scope='col'>Return date</th>
 						      <th scope='col'>Number of Adults</th>
 						      <th scope='col'>Number of Children</th>
 						      <th scope='col'>Number of Infants</th>
 						      <th scope='col'>Type</th>
+							  <th scope='col'>Destination</th>
+							  <th scope='col'>Client Name</th>
 						    </tr>
 						  </thead>
 						  <tbody>
-						    <tr>
-						      <td>$item->book_id</td>
-						      <td>$item->client_id</td>
-						      <td>$item->destination_id</td>
-						      <td>$item->flight_date</td>
-						      <td>$item->return_date</td>
-						      <td>$item->nbAdults</td>
-						      <td>$item->nbChildren</td>
-						      <td>$item->nbInfants</td>
-							";
-							 }
-							
-						      foreach($data['types'] as $item2){
-						      	 echo "
-						      	 <td>$item2->name</td>
-						      							    
-						  </tbody>
-						</table>
+						  <?php  foreach ($data['bookings'] as $item) {
+							$type_name;
+							$destination_country;
+							$destination_city;
+							$client_fname;
+							$client_lname;
+					echo "<tr>
+					<td>$item->book_id</td>
+					<td>$item->flight_date</td>
+					<td>$item->return_date</td>
+					<td>$item->nbAdults</td>
+					<td>$item->nbChildren</td>
+					<td>$item->nbInfants</td>";
 
+					foreach ($data['types'] as $item2) {
+					if($item2->type_id == $item->type_id )
+					$type_name = $item2->name;}
+					
+					foreach ($data['destinations'] as $item2) {
+						if($item2->destination_id == $item->destination_id ){
+							$destination_country = $item2->country;
+							$destination_city = $item2->city;}}
 						
-						<select id="category_id" class="form-control" name="category_id" required>
-                            <!-- Find which category to add -->
 
-                            <?php foreach ($data as $category) {   ?>
-                            
-                            <option value="<?= $category->category_id?>"> <?=$category->category_name?> </option>
-                            <?php } ?>
+						foreach ($data['clients'] as $item3) {
+							if($item3->client_id == $item->client_id ){
+								$client_fname = $item3->fName;
+								$client_lname = $item3->lName;
+								}}
+						
 
+					echo "
+					
+					
+					<td>$type_name</td>
+					<td>$destination_city, $destination_country</td>
+					<td>$client_fname $client_lname</td>";
+					
+				}
+				?>
 
-                        </select>
-
+					</div>
+				</div>
+					  
+					  
+					  </body>
+					  </html>
 							
-							";
-
-
-
- } 
-                   
-                    
-
-                ?>
-                
-                <script>
-                    file = "" + "<?= $data->product_image ?>"
-                    if (file != "") {
-                        document.getElementById("product_img_preview").src = "/images/" + file;
-                    }
-                </script>
+							
+						     
+						      							
             
-            </div>
-
-        </div>
-
-
-</body>
-</html>
+    
