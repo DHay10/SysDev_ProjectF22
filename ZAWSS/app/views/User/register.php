@@ -12,6 +12,7 @@
 
     <body>
         <?php include 'app\views\includes\userHeader.php'; ?>
+        <?php include 'app\views\includes\message.php'; ?>
         
         <div class='container mb-4'>
             <h2 class="h1-responsive font-weight-bold text-center my-4">Register</h2>
@@ -19,7 +20,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="username" placeholder="" required>
+                            <input type="text" class="form-control" name="username" placeholder="Username" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -28,14 +29,14 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="fName" placeholder="" required>
+                            <input type="text" class="form-control" name="fName" placeholder="First Name" required>
                             <label for="fname">First Name</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="lName" placeholder="" required>
+                            <input type="text" class="form-control" name="lName" placeholder="Last Name" required>
                             <label for="lname">Last Name</label>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" name="phone" placeholder="" required>
+                            <input type="tel" class="form-control" name="phone" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" placeholder="Phone" required>
                             <label for="phone">Phone</label>
                             <div id="phoneHelp" class="form-text">I.e. (XXX)XXX-XXXX</div>
                         </div>
@@ -52,7 +53,7 @@
                     
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                             <label for="email">Email</label>
                             <div id="emailHelp" class="form-text">example@example.com</div>
                         </div>
@@ -62,7 +63,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" name="password" placeholder="" minlength="8" required>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Password" minlength="8" required>
                             <label for="password">Password</label>
                             <div id="passwordHelp" class="form-text">At least 8 characters</div>
                         </div>
@@ -70,7 +71,7 @@
 
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" name="password_conf" placeholder="" required>
+                            <input id="passwordConf" type="password" class="form-control" name="passwordConf" placeholder="Password Confirmation" minlength="8"  required>
                             <label for="passwordConf">Password Confirmation</label>
                             <div id="passwordConfHelp" class="form-text">Re-enter your Password</div>
                         </div>
@@ -78,7 +79,7 @@
                 </div>
 
                 <div class="text-center text-md-right">
-                    <button name="action" type="submit" class="btn btn-dark w-50">Sign In</button>
+                    <button name="action" type="submit" class="btn btn-dark w-50" onclick="validate()">Sign In</button>
                 </div>
 
                 <div class="text-center text-md-right">
@@ -86,5 +87,17 @@
                 </div>
             </form>
         </div>
+
+        <script>
+        function validate() {
+            password = document.getElementById('password').value;
+            passwordConf = document.getElementById('passwordConf').value;
+            if (password != passwordConf) {
+                alert("Passwords are not the same.");
+                event.preventDefault();
+            }
+        }
+        </script>
+
     </body>
 </html>

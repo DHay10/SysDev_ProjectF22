@@ -36,12 +36,10 @@ class User extends \app\core\Controller
     public function register()
     {
         if (isset($_POST['action'])) {
-            //echo "button works1";
-            if ($_POST['password'] == $_POST['password_conf']) {
+            if ($_POST['password'] == $_POST['passwordConf']) {
                 $user = new \app\models\User();
                 $nameUsed = $user->getUser($_POST['username']);
                 if (!$nameUsed) {
-                    //echo "button works2";
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user->fName = $_POST['fName'];

@@ -12,6 +12,7 @@
 
     <body>
         <?php include 'app\views\includes\userHeader.php'; ?>
+        <?php include 'app\views\includes\message.php'; ?>
 
         <div class='container mb-4'>
             <h2 class="h1-responsive font-weight-bold text-center my-4">Log In</h2>
