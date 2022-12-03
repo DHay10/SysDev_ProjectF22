@@ -53,19 +53,29 @@ namespace app\models;
 
     public function insertType()
     {
-        $SQL = "INSERT INTO type (name)
-         VALUES(:name)";
+        $SQL = "INSERT INTO type
+         VALUES(:country,:city)";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute([
         'name' => $this->name]);
 
-    }    
+    }  
+
+    public function insertDestination()
+    {
+        $SQL = "INSERT INTO destination
+         VALUES(:country,:city)";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute([
+        'country' => $this->country,'city'=>$this->city]);
+
+    }
 
 
-    public function getDestinationID($destination_id){
-		$SQL = "SELECT * FROM destination WHERE destination_id=:destination_id";
+    public function getDestinationID($city){
+		$SQL = "SELECT * FROM destination WHERE city=:city";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['destination_id'=>$destination_id]);
+		$STMT->execute(['city'=>$city]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
 		return $STMT->fetch();
 	}

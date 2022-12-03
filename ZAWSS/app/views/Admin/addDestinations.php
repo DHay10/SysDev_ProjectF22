@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Add types</title>
+        <title>Add destinations</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
 
         <div class='container mb-4'>
             <!-- Header -->
-            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add types</h2>
-            <p class="h4 text-muted text-center mb-4">You can add the types here (e.g., Single, Student, Elder)</p>
+            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add destinations</h2>
+            <p class="h4 text-muted text-center mb-4">You can add the destination here</p>
             <!-- Form -->
             <form id="booking-form" name="booking-form" action="" method="post">
                 
@@ -26,8 +26,13 @@
                     <!-- Type name -->
                     <div class="col">
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="type_name" id="nb_adults" placeholder="" required>
-                            <label for="nb_adults">Type name</label>
+                            <input type="text" class="form-control" name="country" id="country" placeholder="" required>
+                            <label for="nb_adults">Country</label>
+                        </div>
+                            </br>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" name="city" id="city" placeholder="" required>
+                            <label for="nb_adults">City</label>
                         </div>
                     </div>
                    

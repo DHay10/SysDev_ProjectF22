@@ -63,19 +63,34 @@ class Admin extends \app\core\Controller{
 				header('location:/Admin/addTypes?error=Type Already exists.');
 			}
 			else{
-			
-            
 			$newBooking->name = $_POST['type_name'];
 			$newBooking->insertType();
 			header('location:/Admin/addTypes?message=Added Type successfully.');
 
 			}
-			
-			
-
-
 		}
 
 		$this->view('Admin/addTypes');
+	}
+
+	public function addDestinations(){
+		if (isset($_POST['action'])) {
+			$newDestination = new \app\models\Booking();
+			$country = $_POST['country'];
+			$city = $_POST['city'];
+			$destinations = $newDestination->getDestinationID($city);
+			if($destinations->city == $city){
+				header('location:/Admin/addDestinations?error=Destination Already exists.');
+			}
+			else{            
+			$newDestination->country = $_POST['country'];
+			$newDestination->city = $_POST['city'];
+			$newDestination->insertDestination();
+			header('location:/Admin/addDestinations?message=Added Destination successfully.');
+
+			}
+		}
+
+		$this->view('Admin/addDestinations');
 	}
 }

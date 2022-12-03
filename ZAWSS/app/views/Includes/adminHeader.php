@@ -32,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/Admin/addTypes">Types</a></li>
-                        <li><a class="dropdown-item" href="">Destinations</a></li>
+                        <li><a class="dropdown-item" href="/Admin/addDestinations">Destinations</a></li>
                     </ul>
                 </li>
 
