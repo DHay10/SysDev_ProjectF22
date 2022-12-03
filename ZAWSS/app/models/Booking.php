@@ -51,6 +51,16 @@ namespace app\models;
 		return $STMT->fetchAll();
     }
 
+    public function insertType()
+    {
+        $SQL = "INSERT INTO type (name)
+         VALUES(:name)";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute([
+        'name' => $this->name]);
+
+    }    
+
 
     public function getDestinationID($destination_id){
 		$SQL = "SELECT * FROM destination WHERE destination_id=:destination_id";
@@ -61,10 +71,10 @@ namespace app\models;
 	}
 
 
-  public function getTypeID($type_id){
-		$SQL = "SELECT * FROM type WHERE type_id=:type_id";
+  public function getTypeID($name){
+		$SQL = "SELECT * FROM type WHERE name=:name";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['type_id'=>$type_id]);
+		$STMT->execute(['name'=>$name]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
 		return $STMT->fetch();
 	}

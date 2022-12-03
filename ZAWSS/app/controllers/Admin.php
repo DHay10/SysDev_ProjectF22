@@ -53,4 +53,29 @@ class Admin extends \app\core\Controller{
 		$messages = $message->getAll();
 		$this->view('Admin/viewMessages', $messages);
 	}
+
+	public function addTypes(){
+		if (isset($_POST['action'])) {
+			$newBooking = new \app\models\Booking();
+			$type_name = $_POST['type_name'];
+			$types = $newBooking->getTypeID($type_name);
+			if($types->name == $type_name){
+				header('location:/Admin/addTypes?error=Type Already exists.');
+			}
+			else{
+			
+            
+			$newBooking->name = $_POST['type_name'];
+			$newBooking->insertType();
+			header('location:/Admin/addTypes?message=Added Type successfully.');
+
+			}
+			
+			
+
+
+		}
+
+		$this->view('Admin/addTypes');
+	}
 }
