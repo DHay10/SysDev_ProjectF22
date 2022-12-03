@@ -15,8 +15,37 @@
 
     <body>
         <?php include 'app\views\includes\userHeader.php'; ?>
-        <h1>About Us Page</h1>
+        <h1> <center>About Us Page</center> </h1>
 
+      
+<center>    <p id="about">As a travel agency, this domain offers tickets to its clients at various prices depending on multiple factors, such as destinations, routes, etc. This type of service is already available here in Montreal and impacts the competition of said service. Clientele prefers reputable agencies with utilities that are efficient, and that comes with great customer support, which makes small businesses such as Mr. Hussain’s harder to stand out. However, as a customer-loving and caring owner, Mr. Hussain strives to make his clientele happy.
+An important factor to keep into account is the fact that Customers are connected to the Internet…, which [is] prominently used to search for the best travel agency near them. In order to capture this customer base, travel agencies spend excessively to boost their online presence and become more credible in the eyes of these users. However, while doing so, an agency may fail to maintain its online credibility, particularly with respect to its website. (Indifi Business Blogs)
+</p>
+</center>
+
+
+
+<p></p>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+	
+	h2{
+		text-align: center;
+	}
+
+    #about{
+        margin-top: 100px;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 25px;
+        background: skyblue;;
+        padding: 20px; 
+        width: 1000px;
+        height: 550px; 
+            
+    }
+
+    </style>
 
         <?php include 'app\views\includes\userFooter.php'; ?>
     </body>

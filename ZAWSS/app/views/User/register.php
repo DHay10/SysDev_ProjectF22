@@ -45,9 +45,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" name="phone" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" placeholder="Phone" maxlength="13" required>
+                            <input type="tel" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone" maxlength="13" required>
                             <label for="phone">Phone</label>
-                            <div id="phoneHelp" class="form-text">I.e. (XXX)XXX-XXXX</div>
+                            <div id="phoneHelp" class="form-text">I.e. XXX-XXX-XXXX</div>
                         </div>
                     </div>
                     

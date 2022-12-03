@@ -47,4 +47,10 @@ class Admin extends \app\core\Controller{
 			$this->view('Admin/register');
 		}
 	}
+
+	public function viewMessages(){
+		$message = new \app\models\Message();
+		$messages = $message->getAll();
+		$this->view('Admin/viewMessages', $messages);
+	}
 }

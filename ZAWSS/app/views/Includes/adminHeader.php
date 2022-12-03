@@ -2,7 +2,7 @@
     <!-- Container -->
     <div class="container-fluid">
         <!-- Brand -->
-        <a class="navbar-brand" href="/Main/index">ZAWSS</a>
+        <a class="navbar-brand" href="/Admin/index">ZAWSS</a>
         <span class="navbar-text">
             Admin
         </span>
@@ -15,15 +15,15 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <?php if(isset($_SESSION['admin_id'])) { ?>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Main/index">Dashboard</a>
+                <a class="nav-link active" aria-current="page" href="/Admin/index">Dashboard</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="/User/book">Bookings</a>
+                <a class="nav-link" href="/Admin/index">View Bookings</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/User/profile">Messages</a>
+                    <a class="nav-link" href="/Admin/viewMessages">Messages</a>
                 </li>
 
                 <li class="nav-item dropdown">

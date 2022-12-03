@@ -19,8 +19,8 @@
 
         <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p>821 Sainte Croix Ave, Saint-Laurent, Quebec H4L 3X9</p>
-            <p>zawss@fakeemail.com</p>
+            <p>657 Bd du Curé-Labelle #210, Laval, QC H7V 2T8</p>
+            <p>info@voyageszawsstravel.ca</p>
             <p>(514) 744-7500</p>
         </div>
     </div>

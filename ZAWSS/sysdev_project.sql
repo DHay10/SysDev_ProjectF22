@@ -100,6 +100,7 @@ CREATE TABLE `message` (
   `lName` varchar(20) NOT NULL,
   `email` varchar(60) NOT NULL,
   `phone` varchar(20) NOT NULL,
+  `subject` varchar(50) NOT NULL,
   `content` varchar(250) NOT NULL,
   `dateSent` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
