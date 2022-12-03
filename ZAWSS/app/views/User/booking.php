@@ -16,18 +16,18 @@
 
         <div class='container mb-4'>
             <!-- Header -->
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Book Your Travel</h2>
-            <p class="h4 text-muted text-center">You can send this form to inquire for a quote from our company, it will take around 1 to 2 weeks for a reply</p>
+            <h2 class="h1-responsive font-weight-bold text-center mt-4">Book Your Travel</h2>
+            <p class="h4 text-muted text-center mb-4">You can send this form to inquire for a quote from our company, it will take around 1 to 2 weeks for a reply</p>
             <!-- Form -->
             <form id="booking-form" name="booking-form" action="" method="post">
                 <!-- Destination -->
                 <div class="row mb-3">
                     <div class="col">
                         <div class="form-floating">
-                            <select class="form-control" name="destination">
-                                <option value=""></option>
+                            <select class="form-control" name="destination" required>
+                                <option disabled selected value>Select an Option</option>
                                 <?php 
-                                foreach ($data as $item) {
+                                foreach ($data["destinations"] as $item) {
                                     echo "<option value=$item->destination_id>$item->country, $item->city</option>";
                                 }
                                 ?>
@@ -41,7 +41,7 @@
                     <!-- Departing Date -->
                     <div class="col">
                         <div class="form-floating">
-                            <input type="date" class="form-control" aria-describedby="dateHelp" name="departure_date" required>
+                            <input type="date" id="departure_date" class="form-control" aria-describedby="dateHelp" name="departure_date" required>
                             <small id="dateHelp" class="form-text text-muted">Note: Submitted dates may not be accurate to the actually booking, it is an approximation</small>
                             <label for="departure_date">Departing Date</label>
                         </div>
@@ -49,8 +49,9 @@
                     <!-- Return Date -->
                     <div class="col">
                         <div class="form-floating">
-                            <input type="date" class="form-control" id="return_date" name="return_date" required>
+                            <input type="date" id="return_date" class="form-control" id="return_date" name="return_date" required>
                             <label for="return_date">Returning Date</label>
+                            <small id="dateHelp" class="form-text text-muted">The Trip will last around 2 days minimum</small>
                         </div>
                     </div>
                 </div>
@@ -83,9 +84,9 @@
                     <div class="col">
                         <div class="form-floating">
                             <select class="form-control" id="type" name="type">
-                                <option value=""></option>
-                                <?php foreach ($data2 as $item) {
-
+                            <option disabled selected value>Select an Option</option>
+                                <?php 
+                                foreach ($data["types"] as $item) {
                                     echo "<option value=$item->type_id>$item->name</option>";
                                 }
                                 ?>
@@ -110,4 +111,16 @@
         <?php include 'app\views\includes\userFooter.php'; ?>
 
     </body>
+
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate() + 20).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        departureMin = yyyy + '-' + mm + '-' + dd;
+        returnMin = 
+        document.getElementById("departure_date").setAttribute("min", departureMin);
+        document.getElementById("return_date").setAttribute("min", today);
+        
+    </script>
 </html>

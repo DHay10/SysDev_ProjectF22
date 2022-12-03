@@ -70,36 +70,32 @@ class User extends \app\core\Controller {
     }
 
     public function booking() {
-
         $booking = new \app\models\Booking();
         //Gets all the destinations country&city and pass them to the view
         $destinations = $booking->getAllDestinations();
         //Gets all the types such as type name and pass them to the view
         $types = $booking->getAllTypes();
-
-
-        $booking2 = new \app\models\Booking();
+        $newBooking = new \app\models\Booking();
         $user = new \app\models\User();
 
         if (isset($_POST['action'])) {
-            $username2 = $_SESSION['username'];
-            $user->username = $username2;
-            $user = $user->getUser($username2);
+            $username = $_SESSION['username'];
+            $user->username = $username;
+            $user = $user->getUser($username);
             $user_id = $user->client_id;
-            $booking2->client_id = $user_id;
+            $newBooking->client_id = $user_id;
 
             $destination = $_POST['destination'];
             $type = $_POST['type'];
-            $booking2->destination_id = $destination;
-            $booking2->flight_date = $_POST['departure_date'];
-            $booking2->return_date = $_POST['return_date'];
-            $booking2->nbAdults = $_POST['nb_adults'];
-            $booking2->nbChildren = $_POST['nb_children'];
-            $booking2->nbInfants = $_POST['nb_infants'];
-            $booking2->type_id = $type;
-
-            $booking2->insertBooking();
+            $newBooking->destination_id = $destination;
+            $newBooking->flight_date = $_POST['departure_date'];
+            $newBooking->return_date = $_POST['return_date'];
+            $newBooking->nbAdults = $_POST['nb_adults'];
+            $newBooking->nbChildren = $_POST['nb_children'];
+            $newBooking->nbInfants = $_POST['nb_infants'];
+            $newBooking->type_id = $type;
+            $newBooking->insertBooking();
         }
-        $this->view('User/booking', $destinations, $types);
+        $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
     }
 }

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="container-fluid text-center text-md-start mt-5 text-muted">
+<footer class="container-fluid  text-center text-md-start mt-5 text-muted">
     <hr>
     <div class="row mt-3">
         <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
@@ -27,7 +27,7 @@
 
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+  <div class=" text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
     © 2022 Copyright:
     <a class="text-reset fw-bold" href="#">ZAWSS</a>
   </div>
