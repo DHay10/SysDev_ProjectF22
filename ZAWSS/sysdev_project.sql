@@ -66,7 +66,7 @@ CREATE TABLE `client` (
   `fName` varchar(25) NOT NULL,
   `lName` varchar(25) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` int(20) NOT NULL
+  `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
