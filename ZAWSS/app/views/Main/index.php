@@ -14,25 +14,27 @@
     </head>
     <body>
         <?php include 'app\views\includes\userHeader.php'; ?>
-        <h1>Home Page</h1>
-        <center>
         <div id="slider">
+
         </div>
-        </center>
 
         <?php include 'app\views\includes\userFooter.php'; ?>
   </body>
 <style type="text/css">
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
   #slider{
-    width: 100%;
-    height: 330px;
     background-image: url("../images/MtlDowntown.png");
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;    
     background-repeat: no-repeat;
     animation-name: change;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: normal;
     animation-delay: 2s;
   }
   @keyframes change{
@@ -46,10 +48,10 @@
       background-image: url("../images/morocco.png");
     }
     75%{
-background-image: url("../images/Rome.png");
+      background-image: url("../images/Rome.png");
     }
     100%{
-background-image: url("../images/vietnam.png");
+      background-image: url("../images/vietnam.png");
     }
   }
 }

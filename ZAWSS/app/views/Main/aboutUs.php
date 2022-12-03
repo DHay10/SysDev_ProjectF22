@@ -28,7 +28,7 @@ An important factor to keep into account is the fact that Customers are connecte
 <p></p>
 <style type="text/css">
 	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-	
+
 	h2{
 		text-align: center;
 	}
