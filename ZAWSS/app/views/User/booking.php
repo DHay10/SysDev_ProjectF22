@@ -51,7 +51,7 @@
                         <div class="form-floating">
                             <input type="date" id="return_date" class="form-control" id="return_date" name="return_date" required>
                             <label for="return_date">Returning Date</label>
-                            <small id="dateHelp" class="form-text text-muted">The Trip will last around 2 days minimum</small>
+                            <small id="dateHelp" class="form-text text-muted">The Trip should last around 2 days minimum</small>
                         </div>
                     </div>
                 </div>
@@ -98,11 +98,11 @@
                 <!-- Buttons -->
                 <div class="row">
                     <div class="col d-grid">
-                        <button name="action" type="submit" class="btn btn-dark">Submit</button>
+                        <button name="reset" type="reset" class="btn btn-warning">Reset</button>
                     </div>
 
                     <div class="col d-grid">
-                        <button name="reset" type="reset" class="btn btn-warning">Reset</button>
+                        <button name="action" type="submit" class="btn btn-dark">Submit</button>
                     </div>
                 </div>
             </form>
@@ -114,13 +114,12 @@
 
     <script>
         var today = new Date();
-        var dd = String(today.getDate() + 20).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var dd = String(today.getDate() + 14).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         departureMin = yyyy + '-' + mm + '-' + dd;
-        returnMin = 
+        // Update 2 days from departure_date to return_date
         document.getElementById("departure_date").setAttribute("min", departureMin);
         document.getElementById("return_date").setAttribute("min", today);
-        
     </script>
 </html>
