@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Booking Page</title>
@@ -119,7 +119,7 @@
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
 
-        var dd2 = String(today.getDate() + 18).padStart(2, '0')
+        var dd2 = String(today.getDate() + 16).padStart(2, '0')
         departureMin = yyyy + '-' + mm + '-' + dd;
         returnMin = yyyy + '-' + mm + '-' + dd2;
         // Update 2 days from departure_date to return_date

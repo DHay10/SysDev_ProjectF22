@@ -91,10 +91,6 @@ class Admin extends \app\core\Controller{
 			header('location:/Admin/addTypes?message=Added Type successfully.');
 
 			}
-
-
-
-
 		}
 
 		$this->view('Admin/addTypes');
@@ -119,5 +115,14 @@ class Admin extends \app\core\Controller{
 		}
 
 		$this->view('Admin/addDestinations');
+	}
+
+	public function updateStatus(){
+		// $admin = new \app\models\Admin();
+		// $admin->status = $_POST['status'];
+		// $booking = new \app\models\Booking();
+		// $booking->getByID();
+		// $admin->updateStatus();
+
 	}
 }

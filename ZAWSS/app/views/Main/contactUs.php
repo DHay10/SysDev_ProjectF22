@@ -41,7 +41,7 @@
                 <div class="row mb-4">
                     <div class="col">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= isset($_SESSION['client_id']) ? $_SESSION['email'] : ""?>" required>
+                            <input type="email" class="form-control" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" value="<?= isset($_SESSION['client_id']) ? $_SESSION['email'] : ""?>" required>
                             <label for="email">Email</label>
                             <div id="emailHelp" class="form-text">example@example.com</div>
                         </div>
@@ -51,7 +51,7 @@
                         <div class="form-floating">
                             <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  maxlength="13" value="<?= isset($_SESSION['client_id']) ? $_SESSION['phone'] : ""?>" required>
                             <label for="phone">Phone</label>
-                            <div id="phoneHelp" class="form-text">I.e. (XXX)XXX-XXXX</div>
+                            <div id="phoneHelp" class="form-text">I.e. XXX-XXX-XXXX</div>
                         </div>
                     </div>
                 </div>

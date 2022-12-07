@@ -5,14 +5,14 @@ namespace app\models;
  class Booking extends \app\core\Model
 {
 
-  public $client_id;
-	public $destination_id;
-	public $flight_date;
-  public $return_date;
-  public $nbAdults;
-  public $nbChildren;
-  public $nbInfants;
-  public $type_id;
+    public $client_id;
+    public $destination_id;
+    public $flight_date;
+    public $return_date;
+    public $nbAdults;
+    public $nbChildren;
+    public $nbInfants;
+    public $type_id;
 
 
   public function insertBooking()
@@ -32,10 +32,8 @@ namespace app\models;
         'type_id' => $this->type_id,
         'status' => $this->status
         ]);
-
     }    
   
-
     public function getAllDestinations(){
         $sql = "SELECT * FROM destination";
 		$STMT = self::$_connection->prepare($sql);
@@ -61,9 +59,6 @@ namespace app\models;
         'name' => $this->name]);
 
     }    
-
-   
-
 
     public function insertDestination()
     {
@@ -103,9 +98,13 @@ namespace app\models;
         return $STMT->fetchAll();
     }
 
-
-
-   
+    public function getByID(){
+        $SQL = "SELECT * FROM booking_info WHERE book_id=:book_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute();
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+        return $STMT->fetch();
+    }  
    
 
 }

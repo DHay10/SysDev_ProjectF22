@@ -17,4 +17,10 @@ class Admin extends \app\core\Model{
 		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash]);
 	}
 
+	public function updateStatus(){
+		$SQL = "UPDATE booking_info SET status=:status WHERE book_id=:book_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['status'=>$this->status]);
+	}
+
 }

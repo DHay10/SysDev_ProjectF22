@@ -12,13 +12,12 @@
 
 
 	<div class='container mb-4'>
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Client Bookings</h2>
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Your Bookings</h2>
             
             <div class="row mb-4">
                         <table class='table'>
 						  <thead>
 						    <tr>
-						      <th scope='col'>Booking Id</th>
 						      <th scope='col'>Flight date</th>
 						      <th scope='col'>Return date</th>
 						      <th scope='col'>Number of Adults</th>
@@ -39,7 +38,6 @@
 							$client_lname;
 							$status;
 					echo "<tr>
-					<td>$item->book_id</td>
 					<td>$item->flight_date</td>
 					<td>$item->return_date</td>
 					<td>$item->nbAdults</td>
@@ -64,10 +62,7 @@
 								$client_lname = $item3->lName;
 								}}
 						
-
 					echo "
-					
-					
 					<td>$type_name</td>
 					<td>$destination_city, $destination_country</td>
 					<td>$client_fname $client_lname</td>
@@ -79,8 +74,6 @@
 				?>
 
 					</div>
-				</div>
-					  
-					  
-					  </body>
-					  </html>
+				</div>  
+  </body>
+ </html>

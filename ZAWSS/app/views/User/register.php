@@ -53,7 +53,7 @@
                     
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
                             <label for="email">Email</label>
                             <div id="emailHelp" class="form-text">example@example.com</div>
                         </div>

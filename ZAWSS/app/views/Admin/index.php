@@ -70,13 +70,13 @@
 					<td>$type_name</td>
 					<td>$destination_city, $destination_country</td>
 					<td>$client_fname $client_lname</td>
-					<td><select> 
+					<td><select class='form-control' name='status'> 
 						<option> Pending</option> 
 						<option> In progress</option> 
 						<option> Paid</option> 
 						<option> Completed</option> 
 					</select></td>
-					<td><a class='btn btn-primary' href='#' role='button'>Update</a></td>";
+					<td><a class='btn btn-primary' href='updateStatus' name='update' role='button'>Update</a></td>";
 
 					
 				}

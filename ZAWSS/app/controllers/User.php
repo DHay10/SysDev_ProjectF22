@@ -85,8 +85,6 @@ class User extends \app\core\Controller {
 
             }
             else{
-
-            
             $username = $_SESSION['username'];
             $user->username = $username;
             $user = $user->getUser($username);
@@ -113,10 +111,10 @@ class User extends \app\core\Controller {
 
     }
     public function viewQuote(){
-       $booking = new \app\models\Booking();
-        $cleint = new \app\models\User();
+        $booking = new \app\models\Booking();
+        $client = new \app\models\User();
         $bookings = $booking->getAll();
-        $clients = $cleint->getAll();
+        $clients = $client->getByID($_SESSION['client_id']);
         $type = new \app\models\Booking();
         $types = $type->getAllTypes();
         $destinations = $booking->getAllDestinations();

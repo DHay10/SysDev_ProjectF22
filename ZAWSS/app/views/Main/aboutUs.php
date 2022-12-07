@@ -23,14 +23,12 @@ An important factor to keep into account is the fact that Customers are connecte
 </p>
 </center>
 
-
-
-<p></p>
 <style type="text/css">
 	@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-	h2{
+	h1{
 		text-align: center;
+        margin-top: 20px;
 	}
 
     #about{

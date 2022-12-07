@@ -55,9 +55,9 @@
                     
                     <div class="col">
                         <div class="form-floating">
-                            <input class='form-control' type='tel' name='phone' value='<?=$_SESSION['phone']?>' minlength='13' maxlength='13' required >
+                            <input class='form-control' type='tel' name='phone' value='<?=$_SESSION['phone']?>' minlength='12' maxlength='13' required >
                             <label for="phone">Phone</label>
-                            <div id="phoneHelp" class="form-text">I.e. (XXX)XXX-XXXX</div>
+                            <div id="phoneHelp" class="form-text">I.e. XXX-XXX-XXXX</div>
                         </div>
                     </div>
                 </div>
