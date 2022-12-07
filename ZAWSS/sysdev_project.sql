@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 02:33 PM
+-- Generation Time: Dec 07, 2022 at 04:18 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `sysdev_project`
 --
+CREATE DATABASE IF NOT EXISTS `sysdev_project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sysdev_project`;
 
 -- --------------------------------------------------------
 
@@ -55,7 +57,8 @@ CREATE TABLE `booking_info` (
   `nbAdults` int(2) NOT NULL,
   `nbChildren` int(2) NOT NULL,
   `nbInfants` int(2) NOT NULL,
-  `type_id` int(5) NOT NULL
+  `type_id` int(5) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -73,6 +76,13 @@ CREATE TABLE `client` (
   `email` varchar(50) NOT NULL,
   `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`client_id`, `username`, `password_hash`, `fName`, `lName`, `email`, `phone`) VALUES
+(1, 'Dami', '$2y$10$kzwEflb4UvMMzJi1sFMF0OXw16vsgSnJqYo/E8Mpjzdgz/vg7cNc2', 'Dam', 'Visa', 'dami@gmail.com', '123-456-7890');
 
 -- --------------------------------------------------------
 
@@ -93,7 +103,8 @@ CREATE TABLE `destination` (
 INSERT INTO `destination` (`destination_id`, `country`, `city`) VALUES
 (1, 'Canada', 'Montreal'),
 (2, 'Pakistan', 'Karachi'),
-(3, 'United States', 'New York');
+(3, 'United States', 'New York'),
+(4, 'Morocco', 'Casablanca');
 
 -- --------------------------------------------------------
 
@@ -130,7 +141,8 @@ CREATE TABLE `type` (
 INSERT INTO `type` (`type_id`, `name`) VALUES
 (1, 'Single'),
 (2, 'Student'),
-(3, 'Elder');
+(3, 'Elder'),
+(4, 'Business');
 
 --
 -- Indexes for dumped tables
@@ -195,25 +207,25 @@ ALTER TABLE `booking_info`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `client_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `destination`
 --
 ALTER TABLE `destination`
-  MODIFY `destination_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `destination_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `type_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `type_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

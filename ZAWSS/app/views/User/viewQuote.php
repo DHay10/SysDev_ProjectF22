@@ -8,14 +8,13 @@
 	<title></title>
 </head>
 <body>
-<?php include 'app\views\includes\adminHeader.php'; ?>
+<?php include 'app\views\includes\userHeader.php'; ?>
 
 
 	<div class='container mb-4'>
             <h2 class="h1-responsive font-weight-bold text-center my-4">Client Bookings</h2>
             
             <div class="row mb-4">
-                
                         <table class='table'>
 						  <thead>
 						    <tr>
@@ -38,6 +37,7 @@
 							$destination_city;
 							$client_fname;
 							$client_lname;
+							$status;
 					echo "<tr>
 					<td>$item->book_id</td>
 					<td>$item->flight_date</td>
@@ -54,7 +54,8 @@
 					foreach ($data['destinations'] as $item2) {
 						if($item2->destination_id == $item->destination_id ){
 							$destination_country = $item2->country;
-							$destination_city = $item2->city;}}
+							$destination_city = $item2->city;
+							}}
 						
 
 						foreach ($data['clients'] as $item3) {
@@ -70,13 +71,8 @@
 					<td>$type_name</td>
 					<td>$destination_city, $destination_country</td>
 					<td>$client_fname $client_lname</td>
-					<td><select> 
-						<option> Pending</option> 
-						<option> In progress</option> 
-						<option> Paid</option> 
-						<option> Completed</option> 
-					</select></td>
-					<td><a class='btn btn-primary' href='#' role='button'>Update</a></td>";
+					<td>$item->status</td>
+					";
 
 					
 				}
@@ -88,9 +84,3 @@
 					  
 					  </body>
 					  </html>
-							
-							
-						     
-						      							
-            
-    

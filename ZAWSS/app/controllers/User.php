@@ -102,6 +102,8 @@ class User extends \app\core\Controller {
             $newBooking->nbChildren = $_POST['nb_children'];
             $newBooking->nbInfants = $_POST['nb_infants'];
             $newBooking->type_id = $type;
+            $status = "Pending";
+            $newBooking->status = $status;
             $newBooking->insertBooking();
             header('location:/User/booking?message=Booking sent sucessfully. You should receive a reply soon');
 
@@ -109,5 +111,16 @@ class User extends \app\core\Controller {
     }
     $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
 
+    }
+    public function viewQuote(){
+       $booking = new \app\models\Booking();
+        $cleint = new \app\models\User();
+        $bookings = $booking->getAll();
+        $clients = $cleint->getAll();
+        $type = new \app\models\Booking();
+        $types = $type->getAllTypes();
+        $destinations = $booking->getAllDestinations();
+        $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
+ 
     }
 }

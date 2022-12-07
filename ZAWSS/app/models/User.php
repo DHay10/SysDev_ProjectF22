@@ -19,7 +19,8 @@ class User extends \app\core\Model {
 						'fName'=>$this->fName,
 						'lName'=>$this->lName,
 						'email'=>$this->email,
-						'phone'=>$this->phone]);
+						'phone'=>$this->phone
+						]);
 	}
 
 	public function getByID($client_id){

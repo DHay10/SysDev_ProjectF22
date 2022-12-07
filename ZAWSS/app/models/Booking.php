@@ -17,9 +17,9 @@ namespace app\models;
 
   public function insertBooking()
     {
-        $SQL = "INSERT INTO booking_info (client_id,destination_id,flight_date,return_date,nbAdults, nbChildren,nbInfants,type_id)
+        $SQL = "INSERT INTO booking_info (client_id,destination_id,flight_date,return_date,nbAdults, nbChildren,nbInfants,type_id,status)
          VALUES
-        (:client_id,:destination_id,:flight_date,:return_date,:nbAdults,:nbChildren,:nbInfants,:type_id)";
+        (:client_id,:destination_id,:flight_date,:return_date,:nbAdults,:nbChildren,:nbInfants,:type_id,:status)";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute([
         'client_id' => $this->client_id,
@@ -29,7 +29,8 @@ namespace app\models;
         'nbAdults' => $this->nbAdults,
         'nbChildren' => $this->nbChildren,
         'nbInfants' => $this->nbInfants,
-        'type_id' => $this->type_id
+        'type_id' => $this->type_id,
+        'status' => $this->status
         ]);
 
     }    
