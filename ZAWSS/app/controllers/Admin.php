@@ -54,6 +54,28 @@ class Admin extends \app\core\Controller{
 		$this->view('Admin/viewMessages', $messages);
 	}
 
+
+	public function delete($message_id){
+		$message = new \app\models\Message();
+		$messages = $message->delete($message_id);
+		$admin = new Admin();
+		header('location:/Admin/viewMessages?message=Deleted message sucessfully');
+
+		$admin ->viewMessages();
+	}
+
+
+	public function reply($message_id){
+		// $message = new \app\models\Message();
+		// $messages = $message->delete($message_id);
+		// $admin = new Admin();
+		// header('location:/Admin/viewMessages?message=Deleted message sucessfully');
+
+		$this->view('Admin/replyMessages');
+	}
+
+
+
 	public function addTypes(){
 		if (isset($_POST['action'])) {
 			$newBooking = new \app\models\Booking();
@@ -63,11 +85,17 @@ class Admin extends \app\core\Controller{
 				header('location:/Admin/addTypes?error=Type Already exists.');
 			}
 			else{
+
+
 			$newBooking->name = $_POST['type_name'];
 			$newBooking->insertType();
 			header('location:/Admin/addTypes?message=Added Type successfully.');
 
 			}
+
+
+
+
 		}
 
 		$this->view('Admin/addTypes');

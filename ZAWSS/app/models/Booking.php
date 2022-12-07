@@ -53,23 +53,28 @@ namespace app\models;
 
     public function insertType()
     {
-        $SQL = "INSERT INTO type
-         VALUES(:country,:city)";
+        $SQL = "INSERT INTO type (name)
+         VALUES(:name)";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute([
         'name' => $this->name]);
 
-    }  
+    }    
+
+   
+
 
     public function insertDestination()
     {
-        $SQL = "INSERT INTO destination
-         VALUES(:country,:city)";
+        $SQL = "INSERT INTO destination (country,city)
+         VALUES
+        (:country,:city)";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute([
-        'country' => $this->country,'city'=>$this->city]);
+        'country' => $this->country,
+        'city' => $this->city]);
 
-    }
+    }    
 
 
     public function getDestinationID($city){

@@ -23,5 +23,13 @@ class Message extends \app\core\Model{
         return $STMT->fetchAll();
     }
 
+    public function delete($message_id)
+    {
+        $SQL = "DELETE FROM message where message_id=:message_id ";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['message_id' => $message_id]);
+
+    }
+
 
 }

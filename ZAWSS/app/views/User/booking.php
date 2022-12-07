@@ -83,7 +83,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <div class="form-floating">
-                            <select class="form-control" id="type" name="type">
+                            <select class="form-control" id="type" name="type" required>
                             <option disabled selected value>Select an Option</option>
                                 <?php 
                                 foreach ($data["types"] as $item) {
@@ -114,12 +114,16 @@
 
     <script>
         var today = new Date();
+        var i = 14;
         var dd = String(today.getDate() + 14).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
+
+        var dd2 = String(today.getDate() + 18).padStart(2, '0')
         departureMin = yyyy + '-' + mm + '-' + dd;
+        returnMin = yyyy + '-' + mm + '-' + dd2;
         // Update 2 days from departure_date to return_date
         document.getElementById("departure_date").setAttribute("min", departureMin);
-        document.getElementById("return_date").setAttribute("min", today);
+        document.getElementById("return_date").setAttribute("min", returnMin);
     </script>
 </html>

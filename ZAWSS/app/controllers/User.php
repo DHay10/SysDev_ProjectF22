@@ -79,6 +79,14 @@ class User extends \app\core\Controller {
         $user = new \app\models\User();
 
         if (isset($_POST['action'])) {
+            if(empty($_SESSION['username'])){
+                
+                header('location:/User/booking?error=Please login before trying to book a ticket.');
+
+            }
+            else{
+
+            
             $username = $_SESSION['username'];
             $user->username = $username;
             $user = $user->getUser($username);
@@ -95,7 +103,11 @@ class User extends \app\core\Controller {
             $newBooking->nbInfants = $_POST['nb_infants'];
             $newBooking->type_id = $type;
             $newBooking->insertBooking();
+            header('location:/User/booking?message=Booking sent sucessfully. You should receive a reply soon');
+
         }
-        $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
+    }
+    $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
+
     }
 }
