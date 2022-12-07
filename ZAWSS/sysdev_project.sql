@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 04:20 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Dec 07, 2022 at 02:33 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sysdev_project`
 --
-CREATE DATABASE IF NOT EXISTS `sysdev_project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `sysdev_project`;
 
 -- --------------------------------------------------------
 
@@ -34,6 +32,13 @@ CREATE TABLE `admin` (
   `username` varchar(20) NOT NULL,
   `password_hash` varchar(72) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `username`, `password_hash`) VALUES
+(1, 'Admin', '$2y$10$iJkfCcorSSgfAeT9IugNmOkg3wLsF8cevq8OlL1.IZkL2FJXzTbqe');
 
 -- --------------------------------------------------------
 
@@ -81,14 +86,16 @@ CREATE TABLE `destination` (
   `city` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `destination`
+--
 
-INSERT INTO `destination` (`destination_id`, `country`,`city` ) VALUES
+INSERT INTO `destination` (`destination_id`, `country`, `city`) VALUES
 (1, 'Canada', 'Montreal'),
 (2, 'Pakistan', 'Karachi'),
 (3, 'United States', 'New York');
 
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `message`
@@ -117,15 +124,17 @@ CREATE TABLE `type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `type`
 --
 
-INSERT INTO `type` (`type_id`, `name` ) VALUES
+INSERT INTO `type` (`type_id`, `name`) VALUES
 (1, 'Single'),
 (2, 'Student'),
 (3, 'Elder');
 
-
+--
+-- Indexes for dumped tables
+--
 
 --
 -- Indexes for table `admin`
@@ -174,7 +183,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `booking_info`
@@ -192,7 +201,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `destination`
 --
 ALTER TABLE `destination`
-  MODIFY `destination_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `destination_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -204,7 +213,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `type_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `type_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
