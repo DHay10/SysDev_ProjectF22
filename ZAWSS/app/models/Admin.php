@@ -3,7 +3,7 @@ namespace app\models;
 
 class Admin extends \app\core\Model{
 
-	public function getAdmin($username){
+	public function getByUsername($username){
 		$SQL = "SELECT * FROM admin WHERE username=:username";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$username]);

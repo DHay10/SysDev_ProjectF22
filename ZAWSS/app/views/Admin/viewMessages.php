@@ -43,8 +43,8 @@
 					<td>$item->phone</td>
 					<td>$item->content</td>
 					<td>$item->dateSent</td>
-                    <td><button onclick =window.location.href='/Admin/delete/$item->message_id/'; type='button' class='btn btn-danger'>Delete</button></td>
-                    <td><type='button' class='btn btn-primary'>Reply</button></td>
+                    <td><button onclick=window.location.href='/Admin/deleteMessage/$item->message_id/'; type='button' class='btn btn-danger'>Delete</button></td>
+                    <td><button type='button' class='btn btn-primary'>Reply</button></td>
                     </tr>";
                 }
             }
