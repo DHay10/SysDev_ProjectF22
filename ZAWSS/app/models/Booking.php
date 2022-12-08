@@ -105,6 +105,14 @@ namespace app\models;
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
         return $STMT->fetch();
     }  
+
+    public function getBookingsByClientID($client_id){ 
+        $SQL = "SELECT * FROM booking_info WHERE client_id=:client_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['client_id'=>$client_id]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+        return $STMT->fetchAll();
+    }
    
 
 }

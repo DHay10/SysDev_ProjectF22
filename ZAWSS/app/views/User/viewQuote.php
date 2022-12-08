@@ -53,14 +53,19 @@
 						if($item2->destination_id == $item->destination_id ){
 							$destination_country = $item2->country;
 							$destination_city = $item2->city;
-							}}
+							}
+						}
 						
 
-						foreach ($data['clients'] as $item3) {
-							if($item3->client_id == $item->client_id ){
-								$client_fname = $item3->fName;
-								$client_lname = $item3->lName;
-								}}
+					// foreach ($data['clients'] as $item3) {
+					// 	if($item3->client_id == $item->client_id ){
+					// 		$client_fname = $item3->fName;
+					// 		$client_lname = $item3->lName;
+					// 	}
+					// }
+
+					$client_fname = $data['clients']->fName;
+					$client_lname = $data['clients']->lName;
 						
 					echo "
 					<td>$type_name</td>

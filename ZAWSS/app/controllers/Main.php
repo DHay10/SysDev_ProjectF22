@@ -28,7 +28,7 @@ class Main extends \app\core\Controller{
             $message->subject = $_POST['subject'];
             $message->content = $_POST['content'];
             $message->insertMessage();
-            header('location:/Main/contactUs?message=Message has been sent!');
+            header('location:/Main/contactUs?message=Message has been sent! We will reach out to you via Email');
         } else {
             $this->view('Main/contactUs');
         }

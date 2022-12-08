@@ -117,12 +117,13 @@ class User extends \app\core\Controller {
     public function viewQuote(){
         $booking = new \app\models\Booking();
         $client = new \app\models\User();
-        $bookings = $booking->getAll();
-        $clients = $client->getByID($_SESSION['client_id']);
+        $bookings = $booking->getBookingsByClientID($_SESSION['client_id']);
+        $client = $client->getByID($_SESSION['client_id']);
+        //var_dump($bookings);
         $type = new \app\models\Booking();
         $types = $type->getAllTypes();
         $destinations = $booking->getAllDestinations();
-        $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
+        $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$client]);
  
     }
 }

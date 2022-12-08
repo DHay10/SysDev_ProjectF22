@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php include 'app\views\includes\userHeader.php'; ?>
-        <div id="slider">
+        <div id="slider" name="mx-4">
 
         </div>
 
@@ -37,6 +37,7 @@
     animation-direction: normal;
     animation-delay: 2s;
   }
+
   @keyframes change{
     0%{
       background-image: url("../images/MtlDowntown.png");
@@ -54,7 +55,7 @@
       background-image: url("../images/vietnam.png");
     }
   }
-}
-}
+
+
 </style>
 </html>
