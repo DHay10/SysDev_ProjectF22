@@ -31,12 +31,7 @@
 						  </thead>
 						  <tbody>
 						  <?php  foreach ($data['bookings'] as $item) {
-							$type_name;
-							$destination_country;
-							$destination_city;
-							$client_fname;
-							$client_lname;
-							$status;
+							
 					echo "<tr>
 					<td>$item->flight_date</td>
 					<td>$item->return_date</td>
@@ -74,8 +69,7 @@
 					<td>$item->status</td>
 					";
 
-					
-				}
+									}
 				?>
 
 					</div>

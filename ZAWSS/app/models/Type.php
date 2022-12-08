@@ -19,7 +19,7 @@ class Type extends \app\core\Model {
         return $STMT->fetch();
     }
 
-     // Get Type by ID
+     // Get Type by Name
      public function getByName($type_name) {
         $SQL = "SELECT * FROM type WHERE type_name=:type_name";
         $STMT = self::$_connection->prepare($SQL);

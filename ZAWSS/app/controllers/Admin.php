@@ -16,6 +16,7 @@ class Admin extends \app\core\Controller{
 		if (isset($_POST['action'])) {
 			$admin = new \app\models\Admin();
 			$admin = $admin->getByUsername($_POST['username']);
+
 			if (password_verify($_POST['password'], $admin->password_hash)) {
 				$_SESSION['admin_id'] = $admin->admin_id;
 				$_SESSION['username'] = $admin->username;
@@ -23,6 +24,7 @@ class Admin extends \app\core\Controller{
 			} else {
 				header('location:/Admin/login?error=Invalid Credentials');
 			}
+			
 		}else{
 			$this->view('Admin/login');
 		}

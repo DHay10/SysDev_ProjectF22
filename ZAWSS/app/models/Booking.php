@@ -1,10 +1,7 @@
 <?php
-
 namespace app\models;
 
- class Booking extends \app\core\Model
-{
-
+class Booking extends \app\core\Model {
     public $client_id;
     public $destination_id;
     public $flight_date;
@@ -15,8 +12,7 @@ namespace app\models;
     public $type_id;
 
 
-  public function insertBooking()
-    {
+    public function insertBooking() {
         $SQL = "INSERT INTO booking_info (client_id,destination_id,flight_date,return_date,nbAdults, nbChildren,nbInfants,type_id,status)
          VALUES
         (:client_id,:destination_id,:flight_date,:return_date,:nbAdults,:nbChildren,:nbInfants,:type_id,:status)";
@@ -32,7 +28,19 @@ namespace app\models;
         'type_id' => $this->type_id,
         'status' => $this->status
         ]);
-    }    
+    }
+
+    public function getBookingsByClientID($client_id)
+    {
+        $SQL = "SELECT * FROM  booking_info
+         inner join destination on destination.destination_id=booking_info.destination_id
+         inner join type on type.type_id=booking_info.type_id
+        WHERE client_id=:client_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['client_id' => $client_id]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+        return $STMT->fetchAll();
+    }
   
     public function getAllDestinations(){
         $sql = "SELECT * FROM destination";
