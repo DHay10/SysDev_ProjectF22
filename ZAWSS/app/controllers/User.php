@@ -93,11 +93,12 @@ class User extends \app\core\Controller {
         $user = new \app\models\User();
 
         if (isset($_POST['action'])) {
+            // var_dump($_POST['destination']);
             $user->username = $_SESSION['username'];
             $user = $user->getByUsername($_SESSION['username']);
             $newBooking->client_id = $user->client_id;
 
-            $newBooking->destination_id = $$_POST['destination'];
+            $newBooking->destination_id = $_POST['destination'];
             $newBooking->flight_date = $_POST['departure_date'];
             $newBooking->return_date = $_POST['return_date'];
             $newBooking->nbAdults = $_POST['nb_adults'];
@@ -106,6 +107,7 @@ class User extends \app\core\Controller {
             $newBooking->type_id = $_POST['type'];
             $status = "Pending";
             $newBooking->status = $status;
+
             $newBooking->insert();
             header('location:/User/booking?message=Booking sent sucessfully. You should receive a reply soon');
         }
@@ -117,13 +119,16 @@ class User extends \app\core\Controller {
     public function viewQuote(){
         $booking = new \app\models\Booking();
         $client = new \app\models\User();
+        $destination = new \app\models\Destination();
+
         $bookings = $booking->getBookingsByClientID($_SESSION['client_id']);
         $client = $client->getByID($_SESSION['client_id']);
-        //var_dump($bookings);
-        $type = new \app\models\Booking();
-        $types = $type->getAllTypes();
-        $destinations = $booking->getAllDestinations();
-        $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$client]);
+
+        $type = new \app\models\Type();
+        $types = $type->getAll();
+        $destinations = $destination->getAll();
+
+        $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'client'=>$client]);
  
     }
 

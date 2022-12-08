@@ -20,7 +20,7 @@ class Admin extends \app\core\Controller{
 			if (password_verify($_POST['password'], $admin->password_hash)) {
 				$_SESSION['admin_id'] = $admin->admin_id;
 				$_SESSION['username'] = $admin->username;
-				header('location:/Admin/index');	
+				header('location:/Admin/viewBookings');	
 			} else {
 				header('location:/Admin/login?error=Invalid Credentials');
 			}
@@ -46,22 +46,24 @@ class Admin extends \app\core\Controller{
 		$type = new \app\models\Type();
 		$destination = new \app\models\Destination();
 
-		$bookings = $booking->getAll();
+		$bookings = $booking->getAll($_GET);
 		$clients = $client->getAll();
 		$types = $type->getAll();
 		$destinations = $destination->getAll();
 
-		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
+		$this->view('Admin/viewBookings', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
+
+
 	}
 
 	// Update Status
 	#[\app\filters\Admin]
-	public function updateStatus(){
-		// $admin = new \app\models\Admin();
-		// $admin->status = $_POST['status'];
-		// $booking = new \app\models\Booking();
-		// $booking->getByID();
-		// $admin->updateStatus();
+	public function updateStatus($book_id, $status){
+		$booking = new \app\models\Booking();
+		$booking->book_id = $book_id;
+		$booking->status = $status;
+		$booking->updateStatus();
+		header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
 	}
 
 	// ------- Message Control -------
@@ -71,6 +73,16 @@ class Admin extends \app\core\Controller{
 	public function viewMessages(){
 		$message = new \app\models\Message();
 		$messages = $message->getAll();
+
+		if(isset($_POST['action'])){
+			$booking = new \app\models\Booking();
+		// $booking->getByID($book_id);
+		$booking->book_id = $book_id;
+		$booking->status = $_POST['status'];
+		echo $_POST['status'];
+		}
+
+
 		$this->view('Admin/viewMessages', $messages);
 	}
 
@@ -96,10 +108,10 @@ class Admin extends \app\core\Controller{
 			} else {
 				$newType->name = $_POST['type_name'];
 				$newType->insert();
-				header('location:/Admin/addTypes?message=Type was added successfully.');
+				header('location:/Admin/addType?message=Type was added successfully.');
 			}
 		} else {
-			$this->view('Admin/addTypes');
+			$this->view('Admin/addType');
 		}
 	}
 
@@ -113,17 +125,17 @@ class Admin extends \app\core\Controller{
 			$destinations = $newDestination->getByID($_POST['city']);
 
 			if ($destinations->city == $_POST['city']) {
-				header('location:/Admin/addDestinations?error=Destination Already exists.');
+				header('location:/Admin/addDestination?error=Destination Already exists.');
 			} else {            
 			$newDestination->country = $_POST['country'];
 			$newDestination->city = $_POST['city'];
 			$newDestination->insertDestination();
-			header('location:/Admin/addDestinations?message=Added Destination successfully.');
+			header('location:/Admin/addDestination?message=Added Destination successfully.');
 
 			}
 		}
 
-		$this->view('Admin/addDestinations');
+		$this->view('Admin/addDestination');
 	}
 
 }

@@ -12,7 +12,7 @@ class Booking extends \app\core\Model {
     public $type_id;
 
 
-    public function insertBooking() {
+    public function insert() {
         $SQL = "INSERT INTO booking_info (client_id,destination_id,flight_date,return_date,nbAdults, nbChildren,nbInfants,type_id,status)
          VALUES
         (:client_id,:destination_id,:flight_date,:return_date,:nbAdults,:nbChildren,:nbInfants,:type_id,:status)";
@@ -30,29 +30,45 @@ class Booking extends \app\core\Model {
         ]);
     }
 
-    public function getBookingsByClientID($client_id) {
-        $SQL = "SELECT * FROM  booking_info
-         inner join destination on destination.destination_id=booking_info.destination_id
-         inner join type on type.type_id=booking_info.type_id
-        WHERE client_id=:client_id";
-        $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(['client_id' => $client_id]);
-        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-        return $STMT->fetchAll();
-    }
+    // public function getBookingsByClientID($client_id) {
+    //     $SQL = "SELECT * FROM  booking_info
+    //      inner join destination on destination.destination_id=booking_info.destination_id
+    //      inner join type on type.type_id=booking_info.type_id
+    //     WHERE client_id=:client_id";
+    //     $STMT = self::$_connection->prepare($SQL);
+    //     $STMT->execute(['client_id' => $client_id]);
+    //     $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+    //     return $STMT->fetchAll();
+    // }
 
-    public function getAll(){
+    public function getAll($params){
         $SQL = "SELECT * FROM booking_info";
+
+        if (isset($params['date']) && $params['date']) {
+            $SQL .= " where flight_date='$params[date]'";
+        }
+
+        if(isset($params['search']) && $params['search']){
+
+            $SQL .= " inner join client on client.client_id=booking_info.client_id where fName like '%$params[search]%'";
+        }
+
+        if(isset($params['status']) && $params['status']){
+            $SQL .= " where status = '$params[status]'";
+        }
+
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute();
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
         return $STMT->fetchAll();
     }
 
-    public function getByID(){
+
+
+    public function getByID($book_id){
         $SQL = "SELECT * FROM booking_info WHERE book_id=:book_id";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute();
+        $STMT->execute(['book_id'=>$book_id]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
         return $STMT->fetch();
     }  
@@ -63,6 +79,13 @@ class Booking extends \app\core\Model {
         $STMT->execute(['client_id'=>$client_id]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
         return $STMT->fetchAll();
+    }
+
+    public function updateStatus() {
+        $SQL = "UPDATE booking_info SET status=:status WHERE book_id=:book_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['book_id'=>$this->book_id,
+                        'status'=>$this->status]);
     }
    
 

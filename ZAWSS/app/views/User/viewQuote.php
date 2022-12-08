@@ -41,8 +41,10 @@
 					";
 
 					foreach ($data['types'] as $item2) {
-					if($item2->type_id == $item->type_id )
-					$type_name = $item2->name;}
+						if($item2->type_id == $item->type_id ) {
+							$type_name = $item2->name;
+						}
+					}
 					
 					foreach ($data['destinations'] as $item2) {
 						if($item2->destination_id == $item->destination_id ){
@@ -59,8 +61,8 @@
 					// 	}
 					// }
 
-					$client_fname = $data['clients']->fName;
-					$client_lname = $data['clients']->lName;
+					$client_fname = $data['client']->fName;
+					$client_lname = $data['client']->lName;
 						
 					echo "
 					<td>$type_name</td>
