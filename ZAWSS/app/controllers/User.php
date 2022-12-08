@@ -1,5 +1,4 @@
 <?php
-
 namespace app\controllers;
 
 class User extends \app\core\Controller {
@@ -26,6 +25,7 @@ class User extends \app\core\Controller {
         }
     }
 
+    #[\app\filters\User]
     public function logout() {
         session_destroy();
         header('location:/User/login');
@@ -54,6 +54,7 @@ class User extends \app\core\Controller {
         }
     }
 
+    #[\app\filters\User]
     public function profile() {
         $user = new \app\models\User();
 		$user = $user->getByID($_SESSION['client_id']);
@@ -69,6 +70,7 @@ class User extends \app\core\Controller {
         }
     }
 
+    #[\app\filters\User]
     public function booking() {
         $booking = new \app\models\Booking();
         //Gets all the destinations country&city and pass them to the view
@@ -110,6 +112,8 @@ class User extends \app\core\Controller {
     $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
 
     }
+
+    #[\app\filters\User]
     public function viewQuote(){
         $booking = new \app\models\Booking();
         $client = new \app\models\User();

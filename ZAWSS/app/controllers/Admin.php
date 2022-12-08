@@ -3,6 +3,7 @@ namespace app\controllers;
 
 class Admin extends \app\core\Controller{
 
+	#[\app\filters\Admin]
 	public function index(){
 		$booking = new \app\models\Booking();
 		$cleint = new \app\models\User();
@@ -32,22 +33,7 @@ class Admin extends \app\core\Controller{
 
 	}
 
-	// public function register(){
-	// 	if(isset($_POST['action'])){
-	// 		if($_POST['password'] == $_POST['password_conf']){
-	// 			$admin = new \app\models\Admin();
-	// 			$admin->username = $_POST['username'];
-	// 			$admin->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-	// 			$admin->insertAdmin();
-	// 			header('location:/Admin/login?message=Registered successfully');
-	// 		} else {
-	// 			header('location:/User/register?error=Passwords do not match');
-	// 		}
-	// 	}else{
-	// 		$this->view('Admin/register');
-	// 	}
-	// }
-
+	#[\app\filters\Admin]
 	public function viewMessages(){
 		$message = new \app\models\Message();
 		$messages = $message->getAll();
@@ -55,6 +41,7 @@ class Admin extends \app\core\Controller{
 	}
 
 
+	#[\app\filters\Admin]
 	public function delete($message_id){
 		$message = new \app\models\Message();
 		$messages = $message->delete($message_id);
@@ -64,6 +51,7 @@ class Admin extends \app\core\Controller{
 	}
 
 
+	#[\app\filters\Admin]
 	public function reply($message_id){
 		// $message = new \app\models\Message();
 		// $messages = $message->delete($message_id);
@@ -75,6 +63,7 @@ class Admin extends \app\core\Controller{
 
 
 
+	#[\app\filters\Admin]
 	public function addTypes(){
 		if (isset($_POST['action'])) {
 			$newBooking = new \app\models\Booking();
@@ -96,6 +85,7 @@ class Admin extends \app\core\Controller{
 		$this->view('Admin/addTypes');
 	}
 
+	#[\app\filters\Admin]
 	public function addDestinations(){
 		if (isset($_POST['action'])) {
 			$newDestination = new \app\models\Booking();
@@ -117,6 +107,7 @@ class Admin extends \app\core\Controller{
 		$this->view('Admin/addDestinations');
 	}
 
+	#[\app\filters\Admin]
 	public function updateStatus(){
 		// $admin = new \app\models\Admin();
 		// $admin->status = $_POST['status'];
