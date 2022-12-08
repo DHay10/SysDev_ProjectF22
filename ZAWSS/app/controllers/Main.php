@@ -1,32 +1,36 @@
 <?php
-    namespace app\controllers;
-    class Main extends \app\core\Controller{
-        
-        public function index(){
-            $this->view('Main/index');
-        }
+namespace app\controllers;
+class Main extends \app\core\Controller{
 
-        public function aboutUs() {
-            $this->view('Main/aboutUs');
-        }
+    // Home Page
+    public function index(){
+        $this->view('Main/index');
+    }
 
-        public function faq() {
-            $this->view('Main/faq');
-        }
+    // About Us Page
+    public function aboutUs() {
+        $this->view('Main/aboutUs');
+    }
 
-        public function contactUs() {
-            if (isset($_POST['action'])) {
-                $message = new \app\models\Message();
-                $message->fName = $_POST['fName'];
-                $message->lName = $_POST['lName'];
-                $message->email = $_POST['email'];
-                $message->phone = $_POST['phone'];
-                $message->subject = $_POST['subject'];
-                $message->content = $_POST['content'];
-                $message->insertMessage();
-                header('location:/Main/contactUs?message=Message has been sent!');
-            } else {
-                $this->view('Main/contactUs');
-            }
+    // FAQ Page
+    public function faq() {
+        $this->view('Main/faq');
+    }
+
+    // Contact Us Form Page
+    public function contactUs() {
+        if (isset($_POST['action'])) {
+            $message = new \app\models\Message();
+            $message->fName = $_POST['fName'];
+            $message->lName = $_POST['lName'];
+            $message->email = $_POST['email'];
+            $message->phone = $_POST['phone'];
+            $message->subject = $_POST['subject'];
+            $message->content = $_POST['content'];
+            $message->insertMessage();
+            header('location:/Main/contactUs?message=Message has been sent!');
+        } else {
+            $this->view('Main/contactUs');
         }
     }
+}
