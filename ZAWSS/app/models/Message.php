@@ -1,7 +1,7 @@
 <?php 
 namespace app\models;
 
-class Message extends \app\core\Model{
+class Message extends \app\core\Model {
 
 	public function insertMessage(){
 		$SQL = "INSERT INTO message(fName, lName, email, phone, subject, content, dateSent) VALUES (:fName, :lName,:email,:phone, :subject, :content,:dateSent)";

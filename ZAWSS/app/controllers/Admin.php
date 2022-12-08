@@ -7,12 +7,12 @@ class Admin extends \app\core\Controller{
 
 	// Dashboard
 	#[\app\filters\Admin]
-	public function index(){
+	public function index() {
 		$this->view('Admin/index');
 	}
 
 	// Admin Login
-	public function login(){
+	public function login() {
 		if (isset($_POST['action'])) {
 			$admin = new \app\models\Admin();
 			$admin = $admin->getByUsername($_POST['username']);
@@ -28,6 +28,13 @@ class Admin extends \app\core\Controller{
 		}
 	}
 
+	// Admin Logout
+	public function logout() {
+		session_destroy();
+        header('location:/Admin/login');
+	}
+
+	// ------- Booking Control -------
 
 	// View Bookings
 	#[\app\filters\Admin]
@@ -38,11 +45,23 @@ class Admin extends \app\core\Controller{
 
 		$bookings = $booking->getAll();
 		$clients = $client->getAll();
-		$types = $type->getAllTypes();
+		$types = $type->getAll();
 
 		$destinations = $booking->getAllDestinations();
 		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
 	}
+
+	// Update Status
+	#[\app\filters\Admin]
+	public function updateStatus(){
+		// $admin = new \app\models\Admin();
+		// $admin->status = $_POST['status'];
+		// $booking = new \app\models\Booking();
+		// $booking->getByID();
+		// $admin->updateStatus();
+	}
+
+	// ------- Message Control -------
 
 	// View Messages
 	#[\app\filters\Admin]
@@ -62,27 +81,31 @@ class Admin extends \app\core\Controller{
 		$admin ->viewMessages();
 	}
 
-	// Add Types of Destination
+	// ------- Type Control -------
+
+	// Add Type of Trip
 	#[\app\filters\Admin]
-	public function addTypes(){
+	public function addType(){
 		if (isset($_POST['action'])) {
-			$newBooking = new \app\models\Booking();
+			$newType = new \app\models\Type();
 			$type_name = $_POST['type_name'];
-			$types = $newBooking->getTypeID($type_name);
-			if ($types->name == $type_name) {
-				header('location:/Admin/addTypes?error=Type Already exists.');
+			if ($newType->getByName($type_name)) {
+				header('location:/Admin/addType?error=Type Already exists.');
 			} else {
-				$newBooking->name = $_POST['type_name'];
-				$newBooking->insertType();
-				header('location:/Admin/addTypes?message=Added Type successfully.');
+				$newType->name = $_POST['type_name'];
+				$newType->insert();
+				header('location:/Admin/addTypes?message=Type was added successfully.');
 			}
 		} else {
 			$this->view('Admin/addTypes');
 		}
 	}
 
+	// ------- Destination Control -------
+
+	// Add Destinations
 	#[\app\filters\Admin]
-	public function addDestinations(){
+	public function addDestination(){
 		if (isset($_POST['action'])) {
 			$newDestination = new \app\models\Booking();
 			$country = $_POST['country'];
@@ -103,13 +126,4 @@ class Admin extends \app\core\Controller{
 		$this->view('Admin/addDestinations');
 	}
 
-	#[\app\filters\Admin]
-	public function updateStatus(){
-		// $admin = new \app\models\Admin();
-		// $admin->status = $_POST['status'];
-		// $booking = new \app\models\Booking();
-		// $booking->getByID();
-		// $admin->updateStatus();
-
-	}
 }
