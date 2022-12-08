@@ -15,6 +15,14 @@ class Message extends \app\core\Model {
                         'dateSent'=>date("y-m-d")]);
 	}
 
+    public function getByID($message_id) {
+        $SQL = "SELECT * FROM message WHERE message_id=:message_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['message_id' => $message_id]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Message');
+        return $STMT->fetch();
+    }
+
     public function getAll(){
         $SQL = "SELECT * FROM message";
         $STMT = self::$_connection->prepare($SQL);

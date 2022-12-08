@@ -30,8 +30,7 @@ class Booking extends \app\core\Model {
         ]);
     }
 
-    public function getBookingsByClientID($client_id)
-    {
+    public function getBookingsByClientID($client_id) {
         $SQL = "SELECT * FROM  booking_info
          inner join destination on destination.destination_id=booking_info.destination_id
          inner join type on type.type_id=booking_info.type_id
@@ -41,62 +40,6 @@ class Booking extends \app\core\Model {
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
         return $STMT->fetchAll();
     }
-  
-    public function getAllDestinations(){
-        $sql = "SELECT * FROM destination";
-		$STMT = self::$_connection->prepare($sql);
-		$STMT->execute();
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetchAll();
-    }
-
-    public function getAllTypes(){
-        $sql = "SELECT * FROM type";
-		$STMT = self::$_connection->prepare($sql);
-		$STMT->execute();
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetchAll();
-    }
-
-    public function insertType()
-    {
-        $SQL = "INSERT INTO type (name)
-         VALUES(:name)";
-        $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute([
-        'name' => $this->name]);
-
-    }    
-
-    public function insertDestination()
-    {
-        $SQL = "INSERT INTO destination (country,city)
-         VALUES
-        (:country,:city)";
-        $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute([
-        'country' => $this->country,
-        'city' => $this->city]);
-
-    }    
-
-
-    public function getDestinationID($city){
-		$SQL = "SELECT * FROM destination WHERE city=:city";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['city'=>$city]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetch();
-	}
-
-
-  public function getTypeID($name){
-		$SQL = "SELECT * FROM type WHERE name=:name";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['name'=>$name]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetch();
-	}
 
     public function getAll(){
         $SQL = "SELECT * FROM booking_info";

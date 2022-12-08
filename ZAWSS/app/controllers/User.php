@@ -84,47 +84,35 @@ class User extends \app\core\Controller {
     // Booking
     #[\app\filters\User]
     public function booking() {
-        $booking = new \app\models\Booking();
-        //Gets all the destinations country&city and pass them to the view
-        $destinations = $booking->getAllDestinations();
-        //Gets all the types such as type name and pass them to the view
-        $types = $booking->getAllTypes();
+        $destination = new \app\models\Destination();
+        $type = new \app\models\Type();
+        $destinations = $destination->getAll();
+        $types = $type->getAll();
+        
         $newBooking = new \app\models\Booking();
         $user = new \app\models\User();
 
         if (isset($_POST['action'])) {
-            if(empty($_SESSION['username'])){
-                
-                header('location:/User/booking?error=Please login before trying to book a ticket.');
+            $user->username = $_SESSION['username'];
+            $user = $user->getByUsername($_SESSION['username']);
+            $newBooking->client_id = $user->client_id;
 
-            }
-            else{
-            $username = $_SESSION['username'];
-            $user->username = $username;
-            $user = $user->getUser($username);
-            $user_id = $user->client_id;
-            $newBooking->client_id = $user_id;
-
-            $destination = $_POST['destination'];
-            $type = $_POST['type'];
-            $newBooking->destination_id = $destination;
+            $newBooking->destination_id = $$_POST['destination'];
             $newBooking->flight_date = $_POST['departure_date'];
             $newBooking->return_date = $_POST['return_date'];
             $newBooking->nbAdults = $_POST['nb_adults'];
             $newBooking->nbChildren = $_POST['nb_children'];
             $newBooking->nbInfants = $_POST['nb_infants'];
-            $newBooking->type_id = $type;
+            $newBooking->type_id = $_POST['type'];
             $status = "Pending";
             $newBooking->status = $status;
-            $newBooking->insertBooking();
+            $newBooking->insert();
             header('location:/User/booking?message=Booking sent sucessfully. You should receive a reply soon');
-
         }
-    }
-    $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
-
+        $this->view('User/booking', ["destinations"=>$destinations, "types"=>$types]);
     }
 
+    
     #[\app\filters\User]
     public function viewQuote(){
         $booking = new \app\models\Booking();
@@ -138,4 +126,5 @@ class User extends \app\core\Controller {
         $this->view('User/viewQuote', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$client]);
  
     }
+
 }

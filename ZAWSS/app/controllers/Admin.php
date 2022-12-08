@@ -43,13 +43,14 @@ class Admin extends \app\core\Controller{
 	public function viewBookings() {
 		$booking = new \app\models\Booking();
 		$client = new \app\models\User();
-		$type = new \app\models\Booking();
+		$type = new \app\models\Type();
+		$destination = new \app\models\Destination();
 
 		$bookings = $booking->getAll();
 		$clients = $client->getAll();
 		$types = $type->getAll();
+		$destinations = $destination->getAll();
 
-		$destinations = $booking->getAllDestinations();
 		$this->view('Admin/index', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
 	}
 
@@ -77,10 +78,9 @@ class Admin extends \app\core\Controller{
 	#[\app\filters\Admin]
 	public function deleteMessage($message_id){
 		$message = new \app\models\Message();
-		$messages = $message->delete($message_id);
-		$admin = new Admin();
-		header('location:/Admin/viewMessages?message=Deleted message sucessfully');
-		$admin ->viewMessages();
+		$message = $message->getByID($message_id);
+		$message->delete();
+		header('location:/Admin/viewMessages?message=Message had been Deleted Successfully');
 	}
 
 	// ------- Type Control -------
@@ -110,13 +110,11 @@ class Admin extends \app\core\Controller{
 	public function addDestination(){
 		if (isset($_POST['action'])) {
 			$newDestination = new \app\models\Booking();
-			$country = $_POST['country'];
-			$city = $_POST['city'];
-			$destinations = $newDestination->getDestinationID($city);
-			if($destinations->city == $city){
+			$destinations = $newDestination->getByID($_POST['city']);
+
+			if ($destinations->city == $_POST['city']) {
 				header('location:/Admin/addDestinations?error=Destination Already exists.');
-			}
-			else{            
+			} else {            
 			$newDestination->country = $_POST['country'];
 			$newDestination->city = $_POST['city'];
 			$newDestination->insertDestination();
