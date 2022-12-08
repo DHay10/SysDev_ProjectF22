@@ -3,10 +3,13 @@ namespace app\controllers;
 
 class User extends \app\core\Controller {
 
+    // ------- General Control -------
+
+    // User Login
     public function login() {
         if (isset($_POST['action'])) {
             $user = new \app\models\User();
-            $user = $user->getUser($_POST['username']);
+            $user = $user->getByUsername($_POST['username']);
 
             if (password_verify($_POST['password'], $user->password_hash)) {
                 $_SESSION['client_id'] = $user->client_id;
@@ -15,9 +18,9 @@ class User extends \app\core\Controller {
                 $_SESSION['email'] = $user->email;
                 $_SESSION['phone'] = $user->phone;
                 $_SESSION['username'] = $user->username;
-                header('location:/Main/index');
+                header('location:/User/profile');
             } else {
-                header('location:/User/login?error=Invalid credentials');
+                header('location:/User/login?error=Invalid Credentials');
             }
 
         } else {
@@ -25,17 +28,20 @@ class User extends \app\core\Controller {
         }
     }
 
+    // User Logout
     #[\app\filters\User]
     public function logout() {
         session_destroy();
         header('location:/User/login');
     }
 
+    // User Register
     public function register() {
         if (isset($_POST['action'])) {
             if ($_POST['password'] == $_POST['passwordConf']) {
                 $user = new \app\models\User();
-                $nameUsed = $user->getUser($_POST['username']);
+                $nameUsed = $user->getByUsername($_POST['username']);
+
                 if (!$nameUsed) {
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -43,21 +49,24 @@ class User extends \app\core\Controller {
                     $user->lName = $_POST['lName'];
                     $user->email = $_POST['email'];
                     $user->phone = $_POST['phone'];
-                    $user->insertUser();
+                    $user->insert();
                     header('location:/User/login?message=Registered successfully');
                 } else {
                     header('location:/User/register?error=Username is already taken');
                 }
+
             }
         } else {
             $this->view('User/register');
         }
     }
 
+    // User Profile
     #[\app\filters\User]
     public function profile() {
         $user = new \app\models\User();
 		$user = $user->getByID($_SESSION['client_id']);
+        // Edit Info
         if (isset($_POST['action'])) {
             $user->email = $_POST['email'];
 			$user->phone = $_POST['phone'];
@@ -70,6 +79,9 @@ class User extends \app\core\Controller {
         }
     }
 
+    // ------- Booking Control -------
+
+    // Booking
     #[\app\filters\User]
     public function booking() {
         $booking = new \app\models\Booking();

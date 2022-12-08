@@ -31,18 +31,18 @@
                         More
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/Admin/addTypes">Types</a></li>
-                        <li><a class="dropdown-item" href="/Admin/addDestinations">Destinations</a></li>
+                        <li><a class="dropdown-item" href="/Admin/addType">Types</a></li>
+                        <li><a class="dropdown-item" href="/Admin/addDestination">Destinations</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/User/logout">Log Out</a>
+                    <a class="nav-link" href="/Admin/logout">Log Out</a>
                 </li>
 
                 <?php } else { ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/User/login">Sign In</a>
+                    <a class="nav-link" href="/Admin/login">Sign In</a>
                 </li>
                 <?php } ?>
             </ul>

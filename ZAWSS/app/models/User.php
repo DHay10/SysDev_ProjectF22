@@ -3,15 +3,8 @@ namespace app\models;
 
 class User extends \app\core\Model {
 
-	public function getUser($username){
-		$SQL = "SELECT * FROM client WHERE username=:username";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['username'=>$username]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
-		return $STMT->fetch();
-	}
-
-	public function insertUser(){
+	
+	public function insert(){
 		$SQL = "INSERT INTO client(username, password_hash, fName, lName, email, phone) VALUES (:username, :password_hash, :fName, :lName, :email, :phone)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$this->username,
@@ -27,6 +20,14 @@ class User extends \app\core\Model {
 		$SQL = "SELECT * FROM client WHERE client_id=:client_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['client_id'=>$client_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
+		return $STMT->fetch();
+	}
+
+	public function getByUsername($username){
+		$SQL = "SELECT * FROM client WHERE username=:username";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['username'=>$username]);
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
 		return $STMT->fetch();
 	}

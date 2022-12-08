@@ -1,10 +1,7 @@
 <?php
-
 namespace app\models;
 
- class Booking extends \app\core\Model
-{
-
+class Booking extends \app\core\Model {
     public $client_id;
     public $destination_id;
     public $flight_date;
@@ -15,8 +12,7 @@ namespace app\models;
     public $type_id;
 
 
-  public function insertBooking()
-    {
+    public function insertBooking() {
         $SQL = "INSERT INTO booking_info (client_id,destination_id,flight_date,return_date,nbAdults, nbChildren,nbInfants,type_id,status)
          VALUES
         (:client_id,:destination_id,:flight_date,:return_date,:nbAdults,:nbChildren,:nbInfants,:type_id,:status)";
@@ -34,61 +30,6 @@ namespace app\models;
         ]);
     }    
   
-    public function getAllDestinations(){
-        $sql = "SELECT * FROM destination";
-		$STMT = self::$_connection->prepare($sql);
-		$STMT->execute();
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetchAll();
-    }
-
-    public function getAllTypes(){
-        $sql = "SELECT * FROM type";
-		$STMT = self::$_connection->prepare($sql);
-		$STMT->execute();
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetchAll();
-    }
-
-    public function insertType()
-    {
-        $SQL = "INSERT INTO type (name)
-         VALUES(:name)";
-        $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute([
-        'name' => $this->name]);
-
-    }    
-
-    public function insertDestination()
-    {
-        $SQL = "INSERT INTO destination (country,city)
-         VALUES
-        (:country,:city)";
-        $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute([
-        'country' => $this->country,
-        'city' => $this->city]);
-
-    }    
-
-
-    public function getDestinationID($city){
-		$SQL = "SELECT * FROM destination WHERE city=:city";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['city'=>$city]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetch();
-	}
-
-
-  public function getTypeID($name){
-		$SQL = "SELECT * FROM type WHERE name=:name";
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['name'=>$name]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
-		return $STMT->fetch();
-	}
 
     public function getAll(){
         $SQL = "SELECT * FROM booking_info";
