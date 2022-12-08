@@ -42,6 +42,22 @@ namespace app\models;
 		return $STMT->fetchAll();
     }
 
+
+    public function getBookingsByClientID($client_id)
+{
+    $SQL = "SELECT * FROM  booking_info
+     inner join destination on destination.destination_id=booking_info.destination_id
+     inner join type on type.type_id=booking_info.type_id
+    WHERE client_id=:client_id";
+    $STMT = self::$_connection->prepare($SQL);
+    $STMT->execute(['client_id' => $client_id]);
+    $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Booking');
+    return $STMT->fetchAll();
+}
+
+
+
+
     public function getAllTypes(){
         $sql = "SELECT * FROM type";
 		$STMT = self::$_connection->prepare($sql);
