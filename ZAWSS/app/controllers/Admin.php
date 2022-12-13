@@ -1,5 +1,6 @@
 <?php
 namespace app\controllers;
+use app\models\Booking;
 
 class Admin extends \app\core\Controller{
 
@@ -25,7 +26,7 @@ class Admin extends \app\core\Controller{
 				header('location:/Admin/login?error=Invalid Credentials');
 			}
 			
-		}else{
+		} else {
 			$this->view('Admin/login');
 		}
 	}
@@ -52,16 +53,23 @@ class Admin extends \app\core\Controller{
 		$destinations = $destination->getAll();
 
 		$this->view('Admin/viewBookings', ['bookings'=>$bookings, 'types'=>$types, 'destinations'=>$destinations, 'clients'=>$clients]);
-
-
 	}
 
 	// Update Status
 	#[\app\filters\Admin]
-	public function updateStatus($book_id, $status){
+	public function updateStatus($book_id){
 		$booking = new \app\models\Booking();
-		$booking->book_id = $book_id;
-		$booking->status = $status;
+		$booking = $booking->getByID($book_id);
+		switch($booking->status) {
+			case 'Pending':
+				$booking->status = 'Processing';
+				break;
+			case 'Processing':
+				$booking->status = 'Completed';
+				break;
+			case 'Completed':
+				header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
+		}
 		$booking->updateStatus();
 		header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
 	}
@@ -73,15 +81,6 @@ class Admin extends \app\core\Controller{
 	public function viewMessages(){
 		$message = new \app\models\Message();
 		$messages = $message->getAll();
-
-		if(isset($_POST['action'])){
-			$booking = new \app\models\Booking();
-		// $booking->getByID($book_id);
-		$booking->book_id = $book_id;
-		$booking->status = $_POST['status'];
-		echo $_POST['status'];
-		}
-
 
 		$this->view('Admin/viewMessages', $messages);
 	}

@@ -38,6 +38,7 @@ class Message extends \app\core\Model {
         $STMT->execute(['message_id' => $message_id]);
 
     }
+    
     public function reply($message_id){
         
     }
