@@ -25,7 +25,6 @@
                 <th>Message</th>
                 <th>Date Sent</th>
                 <th>Delete message</th>
-                <th>Reply to message</th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +43,7 @@
 					<td>$item->content</td>
 					<td>$item->dateSent</td>
                     <td><button onclick=window.location.href='/Admin/deleteMessage/$item->message_id/'; type='button' class='btn btn-danger'>Delete</button></td>
-                    <td><button type='button' class='btn btn-primary'>Reply</button></td>
+                    
                     </tr>";
                 }
             }

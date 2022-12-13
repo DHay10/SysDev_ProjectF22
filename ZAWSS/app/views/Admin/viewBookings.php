@@ -105,6 +105,7 @@
 							<td>$destination_city, $destination_country</td>
 							<td>$client_fname $client_lname</td>
 							<td>$item->status</td>
+							<td><button onclick=window.location.href='/Admin/deleteBooking/$item->message_id/'; type='button' class='btn btn-danger'>Delete</button></td>
 
 		                 
 						";

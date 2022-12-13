@@ -36,10 +36,10 @@ An important factor to keep into account is the fact that Customers are connecte
         font-size: large;
         font-weight: bold;
         border-radius: 25px;
-        background: skyblue;;
+        background: RGB(224, 224, 224);
         padding: 20px; 
         width: 1000px;
-        height: 550px; 
+        height: 350px; 
             
     }
 
