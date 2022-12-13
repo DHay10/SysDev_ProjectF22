@@ -1,6 +1,5 @@
 <?php
 namespace app\controllers;
-
 class User extends \app\core\Controller {
 
     // ------- General Control -------
@@ -41,7 +40,6 @@ class User extends \app\core\Controller {
             if ($_POST['password'] == $_POST['passwordConf']) {
                 $user = new \app\models\User();
                 $nameUsed = $user->getByUsername($_POST['username']);
-
                 if (!$nameUsed) {
                     $user->username = $_POST['username'];
                     $user->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);

@@ -3,7 +3,8 @@ namespace app\models;
 
 class Message extends \app\core\Model {
 
-	public function insertMessage(){
+    // Insert Message
+	public function insert(){
 		$SQL = "INSERT INTO message(fName, lName, email, phone, subject, content, dateSent) VALUES (:fName, :lName,:email,:phone, :subject, :content,:dateSent)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['fName'=>$this->fName,
@@ -15,6 +16,7 @@ class Message extends \app\core\Model {
                         'dateSent'=>date("y-m-d")]);
 	}
 
+    // Get Message by Message ID
     public function getByID($message_id) {
         $SQL = "SELECT * FROM message WHERE message_id=:message_id";
         $STMT = self::$_connection->prepare($SQL);
@@ -23,6 +25,7 @@ class Message extends \app\core\Model {
         return $STMT->fetch();
     }
 
+    // Get All Messages
     public function getAll(){
         $SQL = "SELECT * FROM message";
         $STMT = self::$_connection->prepare($SQL);
@@ -31,16 +34,12 @@ class Message extends \app\core\Model {
         return $STMT->fetchAll();
     }
 
-    public function delete($message_id)
+    // Delete Message
+    public function delete()
     {
         $SQL = "DELETE FROM message where message_id=:message_id ";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(['message_id' => $message_id]);
-
+        $STMT->execute(['message_id'=>$this->message_id]);
     }
-    public function reply($message_id){
-        
-    }
-
 
 }

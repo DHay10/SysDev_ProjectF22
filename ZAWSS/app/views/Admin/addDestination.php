@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
-        <title>Add destinations</title>
+        <title>Add Destinations</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,39 +16,37 @@
         <?php include 'app\views\includes\message.php'; ?>
 
         <div class='container mb-4'>
-            <!-- Header -->
-            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add destinations</h2>
+
+            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add Destinations</h2>
             <p class="h4 text-muted text-center mb-4">You can add the destination here</p>
-            <!-- Form -->
+
             <form id="booking-form" name="booking-form" action="" method="post">
                 
 
                 <div class="row mb-3">
-                    <!-- Type name -->
+
                     <div class="col">
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="country" id="country" placeholder="" required>
-                            <label for="nb_adults">Country</label>
+                            <input type="text" class="form-control" name="country" id="country" placeholder="Country" required>
+                            <label for="country">Country</label>
                         </div>
                             </br>
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="city" id="city" placeholder="" required>
-                            <label for="nb_adults">City</label>
+                            <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+                            <label for="city">City</label>
                         </div>
                     </div>
-                   
-                   
-
-  
-                    
-
                 </div>
-                <center><button name="action" type="submit" class="btn btn-dark">Submit</button></center>
-            </form>
-        </div>
-                
 
+                <div class="row mb-3 text-center">
+                    <div class="col">
+                        <button name="action" type="submit" class="btn btn-dark w-50">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
 
     </body>
-
 </html>

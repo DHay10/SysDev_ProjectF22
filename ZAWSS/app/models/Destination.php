@@ -22,7 +22,7 @@ class Destination extends \app\core\Model {
 
      // Get Destination by City
      public function getByCity($city) {
-        $SQL = "SELECT * FROM type WHERE city=:city";
+        $SQL = "SELECT * FROM destination WHERE city=:city";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(['city'=>$city]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Destination');

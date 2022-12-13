@@ -33,7 +33,7 @@ class Admin extends \app\core\Controller{
 	// Admin Logout
 	public function logout() {
 		session_destroy();
-        header('location:/Admin/login');
+        header('location:/Admin/login?message=Successfully Logged Out');
 	}
 
 	// ------- Booking Control -------
@@ -58,10 +58,19 @@ class Admin extends \app\core\Controller{
 
 	// Update Status
 	#[\app\filters\Admin]
-	public function updateStatus($book_id, $status){
+	public function updateStatus($book_id){
 		$booking = new \app\models\Booking();
-		$booking->book_id = $book_id;
-		$booking->status = $status;
+		$booking = $booking->getByID($book_id);
+		switch($booking->status) {
+			case 'Pending':
+				$booking->status = 'Processing';
+				break;
+			case 'Processing':
+				$booking->status = 'Completed';
+				break;
+			case 'Completed':
+				header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
+		}
 		$booking->updateStatus();
 		header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
 	}
@@ -110,6 +119,7 @@ class Admin extends \app\core\Controller{
 				$newType->insert();
 				header('location:/Admin/addType?message=Type was added successfully.');
 			}
+
 		} else {
 			$this->view('Admin/addType');
 		}
@@ -121,21 +131,21 @@ class Admin extends \app\core\Controller{
 	#[\app\filters\Admin]
 	public function addDestination(){
 		if (isset($_POST['action'])) {
-			$newDestination = new \app\models\Booking();
-			$destinations = $newDestination->getByID($_POST['city']);
+			$newDestination = new \app\models\Destination();
+			$destinations = $newDestination->getByCity($_POST['city']);
 
 			if ($destinations->city == $_POST['city']) {
 				header('location:/Admin/addDestination?error=Destination Already exists.');
 			} else {            
 			$newDestination->country = $_POST['country'];
 			$newDestination->city = $_POST['city'];
-			$newDestination->insertDestination();
+			$newDestination->insert();
 			header('location:/Admin/addDestination?message=Added Destination successfully.');
 
 			}
+		} else {
+			$this->view('Admin/addDestination');
 		}
-
-		$this->view('Admin/addDestination');
 	}
 
 }

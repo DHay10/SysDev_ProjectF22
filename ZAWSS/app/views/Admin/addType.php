@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Add types</title>
+        <title>Add Types</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,33 +15,30 @@
         <?php include 'app\views\includes\message.php'; ?>
 
         <div class='container mb-4'>
-            <!-- Header -->
-            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add types</h2>
+
+            <h2 class="h1-responsive font-weight-bold text-center mt-4">Add Types</h2>
             <p class="h4 text-muted text-center mb-4">You can add the types here (e.g., Single, Student, Elder)</p>
             <!-- Form -->
             <form id="booking-form" name="booking-form" action="" method="post">
-                
 
                 <div class="row mb-3">
                     <!-- Type name -->
                     <div class="col">
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="type_name" id="nb_adults" placeholder="" required>
-                            <label for="nb_adults">Type name</label>
+                            <input type="text" class="form-control" name="type_name" id="type_name" placeholder="Type Name" required>
+                            <label for="type_name">Type name</label>
                         </div>
                     </div>
-                   
-                   
-
-  
-                    
-
                 </div>
-                <center><button name="action" type="submit" class="btn btn-dark">Submit</button></center>
+
+                <div class="row mb-3 text-center">
+                    <div class="col">
+                        <button name="action" type="submit" class="btn btn-dark w-50">Submit</button>
+                    </div>
+                </div>
+
             </form>
         </div>
-                
-
 
     </body>
 

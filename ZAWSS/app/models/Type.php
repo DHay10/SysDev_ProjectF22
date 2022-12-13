@@ -21,9 +21,9 @@ class Type extends \app\core\Model {
 
      // Get Type by Name
      public function getByName($type_name) {
-        $SQL = "SELECT * FROM type WHERE type_name=:type_name";
+        $SQL = "SELECT * FROM type WHERE name=:name";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(['type_name'=>$type_name]);
+        $STMT->execute(['name'=>$type_name]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Type');
         return $STMT->fetch();
     }
