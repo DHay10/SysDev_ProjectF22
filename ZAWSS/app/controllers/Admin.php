@@ -83,15 +83,6 @@ class Admin extends \app\core\Controller{
 		$message = new \app\models\Message();
 		$messages = $message->getAll();
 
-		if(isset($_POST['action'])){
-			$booking = new \app\models\Booking();
-		// $booking->getByID($book_id);
-		$booking->book_id = $book_id;
-		$booking->status = $_POST['status'];
-		echo $_POST['status'];
-		}
-
-
 		$this->view('Admin/viewMessages', $messages);
 	}
 
