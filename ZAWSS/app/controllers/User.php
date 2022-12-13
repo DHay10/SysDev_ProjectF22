@@ -28,6 +28,13 @@ class User extends \app\core\Controller {
         }
     }
 
+    // User Logout
+    #[\app\filters\User]
+    public function logout() {
+        session_destroy();
+        header('location:/User/login');
+    }
+
     // User Register
     public function register() {
         if (isset($_POST['action'])) {
@@ -52,13 +59,6 @@ class User extends \app\core\Controller {
         } else {
             $this->view('User/register');
         }
-    }
-
-    // User Logout
-    #[\app\filters\User]
-    public function logout() {
-        session_destroy();
-        header('location:/User/login');
     }
 
     // User Profile

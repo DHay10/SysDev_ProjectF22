@@ -3,7 +3,7 @@ namespace app\models;
 
 class Admin extends \app\core\Model{
 
-	public function getByUsername($username) {
+	public function getByUsername($username){
 		$SQL = "SELECT * FROM admin WHERE username=:username";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$username]);
@@ -11,13 +11,13 @@ class Admin extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
-	public function insertAdmin() {
+	public function insertAdmin(){
 		$SQL = "INSERT INTO admin(username, password_hash) VALUES (:username, :password_hash)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash]);
 	}
 
-	public function updateStatus() {
+	public function updateStatus(){
 		$SQL = "UPDATE booking_info SET status=:status WHERE book_id=:book_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['status'=>$this->status]);

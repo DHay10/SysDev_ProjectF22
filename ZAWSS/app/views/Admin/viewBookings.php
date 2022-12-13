@@ -62,26 +62,26 @@
 								  <th scope='col'>Destination</th>
 								  <th scope='col'>Client Name</th>
 								  <th scope="col">Status</th>
-								  <th scope="col">Update</th>
 						    </tr>
 					    </thead>
 
 					    <tbody>
 						  	<?php  foreach ($data['bookings'] as $item) {
-								$type_name;
-								$destination_country;
-								$destination_city;
-								$client_fname;
-								$client_lname;
-								echo "<tr>
-								<td>$item->book_id</td>
-								<td>$item->flight_date</td>
-								<td>$item->return_date</td>
-								<td>$item->nbAdults</td>
-								<td>$item->nbChildren</td>
-								<td>$item->nbInfants</td>
-								";
+							$type_name;
+							$destination_country;
+							$destination_city;
+							$client_fname;
+							$client_lname;
+							echo "<tr>
+							<td>$item->book_id</td>
+							<td>$item->flight_date</td>
+							<td>$item->return_date</td>
+							<td>$item->nbAdults</td>
+							<td>$item->nbChildren</td>
+							<td>$item->nbInfants</td>
+							";
 
+<<<<<<< HEAD
 									foreach ($data['types'] as $item2) {
 										if($item2->type_id == $item->type_id )
 										$type_name = $item2->name;
@@ -101,12 +101,36 @@
 									$client_lname = $item3->lName;
 								}
 							}
+=======
+							foreach ($data['types'] as $item2) {
+								if($item2->type_id == $item->type_id )
+								$type_name = $item2->name;
+						}
+							
+							foreach ($data['destinations'] as $item2) {
+								if($item2->destination_id == $item->destination_id ){
+									$destination_country = $item2->country;
+									$destination_city = $item2->city;
+								}
+							}
+								
+
+							foreach ($data['clients'] as $item3) {
+								if($item3->client_id == $item->client_id ){
+									$client_fname = $item3->fName;
+									$client_lname = $item3->lName;
+								}
+							}
+>>>>>>> parent of a3321f0 (Added Update Status)
 						
 					echo "  <td>$type_name</td>
 							<td>$destination_city, $destination_country</td>
 							<td>$client_fname $client_lname</td>
 							<td>$item->status</td>
+<<<<<<< HEAD
 							<td><button onclick=window.location.href=''; type='button' class='btn btn-danger'>Delete</button></td>
+=======
+>>>>>>> parent of a3321f0 (Added Update Status)
 
 		                 
 						";
