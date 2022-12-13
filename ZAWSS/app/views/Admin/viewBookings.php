@@ -56,6 +56,7 @@
 							<th scope='col'>Destination</th>
 							<th scope='col'>Client Name</th>
 							<th scope="col">Status</th>
+							<th scope="col">Delete</th>
 							<th scope="col">Update</th>
 						</tr>
 					</thead>
@@ -100,8 +101,8 @@
 									<td>$destination_city, $destination_country</td>
 									<td>$client_fname $client_lname</td>
 									<td>$item->status</td>
-
-								";
+									<td><a class='btn btn-danger' href='/Admin/deleteBooking/$item->book_id'>Delete</a></td>";
+									
 							if ($item->status != 'Completed') {
 								echo "
 								<td><a class='btn btn-dark' href='/Admin/updateStatus/$item->book_id'>Update</a></td>";

@@ -70,5 +70,16 @@ class Booking extends \app\core\Model {
         $STMT->execute(['book_id'=>$this->book_id,
                         'status'=>$this->status]);
     }
+
+
+    
+    public function delete($book_id)
+    {
+        $SQL = "DELETE FROM booking_info where book_id=:book_id ";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['book_id' => $book_id]);
+
+    }
+    
    
 }

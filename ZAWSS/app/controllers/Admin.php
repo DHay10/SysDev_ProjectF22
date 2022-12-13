@@ -66,8 +66,15 @@ class Admin extends \app\core\Controller{
 				$booking->status = 'Processing';
 				break;
 			case 'Processing':
-				$booking->status = 'Completed';
+				$booking->status = 'Paid';
 				break;
+
+				case 'Paid':
+					$booking->status = 'Completed';
+					break;
+			
+
+			
 			case 'Completed':
 				header('location:/Admin/viewBookings?message=Booking has been Updated Successfully');
 		}
@@ -94,6 +101,14 @@ class Admin extends \app\core\Controller{
 		$message->delete();
 		header('location:/Admin/viewMessages?message=Message had been Deleted Successfully');
 	}
+
+	#[\app\filters\Admin]
+	public function deleteBooking($book_id){
+		$booking = new \app\models\Booking();
+		$booking->delete($book_id);
+		header('location:/Admin/viewBookings?message=Booking had been Deleted Successfully');
+	}
+
 
 	// ------- Type Control -------
 
